@@ -31,6 +31,8 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 To help you navigate the information in the service guide, we’ve included a glossary of terms. 
 
+| **Name** | **Description** |
+|----------|-----------------|
 | **API** - Application Programmer Interface | Software code that enables communication between different applications. |
 | **CADEX** - Competent Authority Data Exchange | |
 | **DTT** - Domestic Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT. |
