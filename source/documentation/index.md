@@ -10,7 +10,7 @@ Version 1.0 issued 1 January 2020
 
 ## Overview
 
-This service guide explains how you can integrate your software with the <Link:Pillar 2 Submission API>. 
+This service guide explains how you can integrate your software with the Pillar 2 Submission API. 
 **Pillar 2** is the name of a set of regulations introduced by the Organisation for Economic Cooperation and Development (**OECD**) to function as a global minimum tax. It is intended to ensure Multinational Enterprises (**MNEs**) with a turnover of >€750m are subject to a minimum Effective Tax Rate of 15%.
 
 The API provides MNEs (and their agents) with the capability to
@@ -51,13 +51,13 @@ To help you navigate the information in the service guide, we’ve included a gl
 
 ## Agent Services
 
-Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (UPE) or nominated filing member (NFM). 
+Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or nominated filing member (**NFM**). 
 
 Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). You can then use your [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to authorise new clients and copy across existing ones.  
 
 ## Submit UK Tax Return
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the *Pillar 2 Submission API* to submit the UKTR and meet this obligation.
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 Submission API to submit the UKTR and meet this obligation.
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
@@ -113,7 +113,7 @@ HMRC recognises customers or agents will use different pieces of software if an 
 
 “Bridging software” products are used by customers to digitally link record-keeping software with the software solution they use to submit Pillar 2 tax information. Bridging software ensures customers meet their obligations while using software products which meet the minimum functionality standards set out in “Compatible software”.
 
-For more information about digitally linking to software, refer to ??? (GOV.UK).
+For more information about digitally linking to software, refer to GOV.UK).
 
 ### Free-to-use Software
 
