@@ -61,6 +61,9 @@ Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an 
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
+<a href="figures/cis-create-cis.svg" target="blank"><img src="figures/cis-create-cis.svg" alt="CIS create diagram" style="width:720px;" /></a>
+<a href="figures/cis-create-cis.svg" target="blank">Open the CIS create deduction diagram in a new tab</a>
+
 The request structure has four variants created from two dependencies.
 1. Are the group entities UK only or are they a mixture of UK and non-UK entities? 
    **Note**: This information needs to be confirmed during registration for Pillar 2. 
