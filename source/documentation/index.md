@@ -94,8 +94,6 @@ You can find examples for each different request variant (and their responses) i
 
 You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The <Link: API landing page> contains specific information for testing the Pillar 2 Submission API. 
 
-Start using our REST APIs - HMRC Developer Hub - GOV.UK
-
 ## Software Requirements
 
 Any software solutions which integrate with the Pillar 2 Submission API should comply with the requirements listed here. 
