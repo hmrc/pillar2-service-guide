@@ -64,6 +64,9 @@ The information required for the return is submitted in an API request, which is
 <a href="figures/cis-create-cis.svg" target="blank"><img src="figures/cis-create-cis.svg" alt="CIS create diagram" style="width:720px;" /></a>
 <a href="figures/cis-create-cis.svg" target="blank">Open the CIS create deduction diagram in a new tab</a>
 
+or 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 The request structure has four variants created from two dependencies.
 1. Are the group entities UK only or are they a mixture of UK and non-UK entities? 
    **Note**: This information needs to be confirmed during registration for Pillar 2. 
