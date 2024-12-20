@@ -1,9 +1,9 @@
 ---
-title: Example Service Guide
+title: Pillar 2 Submission API Service Guide
 weight: 1
 ---
 
-# Example Service Guide
+# Pillar 2 Submission API Service Guide
 
 Version 1.0 issued 1 January 2020
 ***
@@ -34,7 +34,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 | **Name** | **Description** |
 |----------|-----------------|
 | **API** - Application Programmer Interface | Software code that enables communication between different applications. |
-| **CADEX** - Competent Authority Data Exchange | |
+| **CADEX** - Competent Authority Data Exchange | HMRC Data Layer |
 | **DTT** - Domestic Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT. |
 | **EIS**  - Enterprise Integration Services | A delivery group within HMRC. |
 | **ETMP** - Enterprise Tax Management Platform | HMRC corporate data repository, which receives the API request and returns a response. |
@@ -57,45 +57,38 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 ## Submit UK Tax Return
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UK Tax Return (UKTR) for every accounting period. MNEs/groups (or their agents) can use the <Link:Pillar 2 Submission API> to submit the UKTR and meet this obligation.
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the *Pillar 2 Submission API* to submit the UKTR and meet this obligation.
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
 The request structure has four variants created from two dependencies.
 1. Are the group entities UK only or are they a mixture of UK and non-UK entities? 
-   Note: This information needs to be confirmed during registration for Pillar 2. 
-2. Is the return a Nil return?
+   **Note**: This information needs to be confirmed during registration for Pillar 2. 
+2. Is the return a **Nil** return?
 
 The table here contains some information on the differences between the request variants.
 
- Return Variant
-Description
-Nil Return (MNE/UK)  
-Liable for MTT, the “obligationMTT” field is set to true.
-Nil Return (UK Only)
-Liable for DTT, the “obligationMTT” field is set to false. 
-Liability return (MNE/UK) 
-Request includes totals for DTT, IIR, UTPR and overall total.
-Liability return (UK Only)
-Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. 
+| **Return Variant** | **Description** |
+| ------------------ | --------------- |
+| Nil Return (MNE/UK) | Liable for MTT, the “obligationMTT” field is set to true. |
+| Nil Return (UK Only)| Liable for DTT, the “obligationMTT” field is set to false. |
+| Liability return (MNE/UK) | Request includes totals for DTT, IIR, UTPR and overall total. |
+| Liability return (UK Only) | Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. |
 
 If the request is successful, it returns a response containing several pieces of information.
 
-Name
-Description
-Processing date 
-Date and time the request was processed.
-Form bundle
-Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return
-Charge reference
-Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference).
+| **Name** | **Description** | 
+| -------- | --------------- |
+| Processing date | Date and time the request was processed. |
+| Form bundle | Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return |
+| Charge reference | Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference). |
 
-You can find examples for each different request variant (and their responses) in the <link:Endpoints> page of the <Link:API reference guide>. 
+You can find examples for each different request variant (and their responses) in the *Endpoints* page of the *API reference guide*. 
 
 
 ## Testing Requirements
 
-You can test the Pillar 2 Submission API in the HMRC Developer Hub. You will need to register for an account before you start, and there are instructions for new starters in the user guide. The <Link: API landing page.> contains specific information for testing the Pillar 2 Submission API. 
+You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The <Link: API landing page> contains specific information for testing the Pillar 2 Submission API. 
 
 Start using our REST APIs - HMRC Developer Hub - GOV.UK
 
@@ -107,14 +100,14 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 
 “Compatible software’” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
 
-Provide HMRC with transaction monitoring fraud prevention header data.
-Submit a UKTR, or a BTN
-Make adjustments to a submitted tax return (if required)
-Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form - end users should own and have access to all their records created and be able to export these records, if necessary.
-Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
-Make a final declaration or divert a customer into a channel where they can make it.
+- Provide HMRC with transaction monitoring fraud prevention header data.
+- Submit a UKTR, or a BTN
+- Make adjustments to a submitted tax return (if required)
+- Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own and have access to all their records created and ...be able to export these records, if necessary.
+- Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
+- Make a final declaration or divert a customer into a channel where they can make it.
 
-HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). When a customer uses a combination of products they must follow the rules for digital links set out by HMRC in the <link:Software Notice>.
+HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). When a customer uses a combination of products they must follow the rules for digital links set out by HMRC in the *Software Notice*.
 
 ### Bridging Software
 
@@ -127,8 +120,8 @@ For more information about digitally linking to software, refer to ??? (GOV.UK).
 The UK government is committed to ensuring the availability of free software products and HMRC strongly encourages all providers to produce a free version of their software.
 
 In addition to meeting the minimum functionality standards, we expect free software to 
-include a reasonable level of guidance, with help and support for users.
-enable business tax obligations for an annual accounting period.
+- include a reasonable level of guidance, with help and support for users.
+- enable business tax obligations for an annual accounting period.
 
 HMRC does not expect free software to include tax functionality or integrate with an agent product. However, free software could be used with compatible software products if required. 
 
@@ -136,7 +129,7 @@ HMRC does not expect free software to include tax functionality or integrate wit
 
 Pillar 2 will offer support for organisations in checking eligibility and registering for the service, prepay taxes and later on file returns and be tax compliant in the UK and globally.
 
-Digital Service Available 24/7 365 days a year. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
-Pillar 2 Support Telephone support available via contact centres 8.30 - 17:00. Calls escalated to the Specialist Team. Specialist Team and CRMs email support available 8.30 - 17:00.
+- Digital Service Available 24/7 365 days a year. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
+- Pillar 2 Support Telephone support available via contact centres 8.30 - 17:00. Calls escalated to the Specialist Team. Specialist Team and CRMs email support available 8.30 - 17:00.
 
 ## Changelog
