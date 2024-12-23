@@ -5,7 +5,7 @@ weight: 1
 
 # Pillar 2 Submission API Service Guide
 
-Version 1.0 issued 1 January 2020
+Version 1.0 issued 23 December 2024
 ***
 
 ## Overview
@@ -23,7 +23,7 @@ The API provides MNEs (and their agents) with the capability to
 
 To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a **Pillar 2 ID**, which is generated when an MNE registers and subscribes to the service. 
 
-In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations (approximately 4 000). The communication outlined the registration process and also confirmed the registration deadline. 
+In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations (approximately 4000). The communication outlined the registration process and also confirmed the registration deadline. 
 
 **Important**: The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
 
@@ -92,7 +92,7 @@ You can find examples for each different request variant (and their responses) i
 
 ## Testing Requirements
 
-You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The <Link: API landing page> contains specific information for testing the Pillar 2 Submission API. 
+You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 Submission API. 
 
 ## Software Requirements
 
@@ -109,11 +109,11 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 - Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
 - Make a final declaration or divert a customer into a channel where they can make it.
 
-HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). When a customer uses a combination of products they must follow the rules for digital links set out by HMRC in the *Software Notice*.
+HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). When a customer uses a combination of products they must follow the rules for digital links set out by HMRC.
 
 ### Bridging Software
 
-“Bridging software” products are used by customers to digitally link record-keeping software with the software solution they use to submit Pillar 2 tax information. Bridging software ensures customers meet their obligations while using software products which meet the minimum functionality standards set out in “Compatible software”.
+“Bridging software” products are used by customers to digitally link record-keeping software with the software solution they use to submit Pillar 2 tax information. Bridging software ensures customers meet their obligations while using software products which meet the minimum functionality standards set out in “Compatible Software”.
 
 For more information about digitally linking to software, refer to GOV.UK).
 
