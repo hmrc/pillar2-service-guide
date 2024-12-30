@@ -57,7 +57,7 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 ## Submit UK Tax Return
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 Submission API to submit the UKTR and meet this obligation.
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the _Pillar 2 Submission API_ to submit the UKTR and meet this obligation.
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
@@ -76,8 +76,8 @@ The table here contains some information on the differences between the request 
 | ------------------ | --------------- |
 | Nil Return (MNE/UK) | Liable for MTT, the “obligationMTT” field is set to true. |
 | Nil Return (UK Only)| Liable for DTT, the “obligationMTT” field is set to false. |
-| Liability return (MNE/UK) | Request includes totals for DTT, IIR, UTPR and overall total. |
-| Liability return (UK Only) | Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. |
+| Liability return (MNE/UK) | Request includes totals for DTT, IIR, UTPR and overall total. The “obligationMTT” field is set to true. |
+| Liability return (UK Only) | Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. The “obligationMTT” field is set to false. |
 
 If the request is successful, it returns a response containing several pieces of information.
 
@@ -92,7 +92,7 @@ You can find examples for each different request variant (and their responses) i
 
 ## Testing Requirements
 
-You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 Submission API. 
+You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The _API landing page_ contains specific information for testing the Pillar 2 Submission API. 
 
 ## Software Requirements
 
@@ -105,7 +105,7 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 - Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN
 - Make adjustments to a submitted tax return (if required)
-- Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own and have access to all their records created and ...be able to export these records, if necessary.
+- Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own and have access to all their records created and be able to export these records, if necessary.
 - Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
 - Make a final declaration or divert a customer into a channel where they can make it.
 
