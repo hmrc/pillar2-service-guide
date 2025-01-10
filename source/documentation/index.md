@@ -59,8 +59,6 @@ Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an 
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
-<kbd>![alt text](https://github.com/hmrc/pillar2-service-guide/blob/PIL-1462---Service-Guide-Import-v1/source/images/Pillar2_Submit_UKTR.svg "Submit UKTR")</kbd>
-
 
 The request structure has four variants created from two dependencies.
 1. Are the group entities UK only or are they a mixture of UK and non-UK entities? 
