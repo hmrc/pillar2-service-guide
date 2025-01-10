@@ -34,18 +34,16 @@ To help you navigate the information in the service guide, we’ve included a gl
 | **Name** | **Description** |
 |----------|-----------------|
 | **API** - Application Programmer Interface | Software code that enables communication between different applications. |
-| **CADEX** - Competent Authority Data Exchange | HMRC Data Layer |
+| **CADX** - Competent Authority Data Exchange | HMRC Data Layer |
 | **DTT** - Domestic Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT. |
-| **EIS**  - Enterprise Integration Services | A delivery group within HMRC. |
-| **ETMP** - Enterprise Tax Management Platform | HMRC corporate data repository, which receives the API request and returns a response. |
-| **GAAP** - Generally Accepted Accounting Principles | A set of rules and procedures companies follow when preparing their financial statements. |
+| **GAAP** - Generally Accepted Accounting Principles | A set of rules and procedures UK companies follow when preparing their financial statements. |
 | **IIR** - Income Inclusion Rule | One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax. |
 | **MDTP** - Multi-channel Digital Tax Platform | Hosts components which handle the authorisation and validation of the API request. |
-| **MTT** - Multinational Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK and non-UK entities are liable for MTT. |
+| **MTT** - Multinational Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2, comprised of IIR and UTPR. Groups with UK and non-UK entities are liable for MTT. |
 | **MNE** - Multinational Enterprise | A business organisation with operations based in more than one country. |
 | **NFM** - Nominated Filing Member | An entity nominated by the UPE to file Pillar 2 returns on their behalf. |
 | **UPE** - Ultimate Parent Entity | The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation. |
-| **UTPR**  - Unique Tax Payer Reference | Unique 10-digit codes used by HMRC to identify a business or person. |
+| **UTPR**  - Undertaxed Profits Rule  | One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK. |
 
 
 
@@ -60,7 +58,6 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the _Pillar 2 Submission API_ to submit the UKTR and meet this obligation.
 
 The information required for the return is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
-
 
 <kbd>![alt text](https://github.com/hmrc/pillar2-service-guide/blob/PIL-1462---Service-Guide-Import-v1/source/images/Pillar2_Submit_UKTR.svg "Submit UKTR")</kbd>
 
@@ -84,15 +81,15 @@ If the request is successful, it returns a response containing several pieces of
 | **Name** | **Description** | 
 | -------- | --------------- |
 | Processing date | Date and time the request was processed. |
-| Form bundle | Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return |
+| Form bundle | Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return. |
 | Charge reference | Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference). |
 
-You can find examples for each different request variant (and their responses) in the *Endpoints* page of the *API reference guide*. 
+You can find examples for each different request variant (and their responses) in the Endpoints page of the API reference guide. 
 
 
 ## Testing Requirements
 
-You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The _API landing page_ contains specific information for testing the Pillar 2 Submission API. 
+You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 Submission API. 
 
 ## Software Requirements
 
