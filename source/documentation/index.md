@@ -31,19 +31,19 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 To help you navigate the information in the service guide, we’ve included a glossary of terms. 
 
-| **Name** | **Description** |
+| Name | Description |
 |----------|-----------------|
-| **API** - Application Programmer Interface | Software code that enables communication between different applications. |
-| **CADX** - Competent Authority Data Exchange | HMRC Data Layer |
-| **DTT** - Domestic Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT. |
-| **GAAP** - Generally Accepted Accounting Principles | A set of rules and procedures UK companies follow when preparing their financial statements. |
-| **IIR** - Income Inclusion Rule | One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax. |
-| **MDTP** - Multi-channel Digital Tax Platform | Hosts components which handle the authorisation and validation of the API request. |
-| **MTT** - Multinational Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2, comprised of IIR and UTPR. Groups with UK and non-UK entities are liable for MTT. |
-| **MNE** - Multinational Enterprise | A business organisation with operations based in more than one country. |
-| **NFM** - Nominated Filing Member | An entity nominated by the UPE to file Pillar 2 returns on their behalf. |
-| **UPE** - Ultimate Parent Entity | The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation. |
-| **UTPR**  - Undertaxed Profits Rule  | One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK. |
+| API - Application Programmer Interface | Software code that enables communication between different applications. |
+| CADX - Competent Authority Data Exchange | HMRC Data Layer |
+| DTT - Domestic Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT. |
+| GAAP - Generally Accepted Accounting Principles | A set of rules and procedures UK companies follow when preparing their financial statements. |
+| IIR - Income Inclusion Rule | One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax. |
+| MDTP - Multi-channel Digital Tax Platform | Hosts components which handle the authorisation and validation of the API request. |
+| MTT - Multinational Topup Tax | A new tax introduced as part of the UK adoption of Pillar 2, comprised of IIR and UTPR. Groups with UK and non-UK entities are liable for MTT. |
+| MNE - Multinational Enterprise | A business organisation with operations based in more than one country. |
+| NFM - Nominated Filing Member | An entity nominated by the UPE to file Pillar 2 returns on their behalf. |
+| UPE - Ultimate Parent Entity | The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation. |
+| UTPR  - Undertaxed Profits Rule  | One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK. |
 
 
 
