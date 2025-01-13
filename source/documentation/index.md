@@ -67,7 +67,7 @@ The request structure has four variants created from two dependencies.
 
 The table here contains some information on the differences between the request variants.
 
-| **Return Variant** | **Description** |
+| Return Variant | Description |
 | ------------------ | --------------- |
 | Nil Return (MNE/UK) | Liable for MTT, the “obligationMTT” field is set to true. |
 | Nil Return (UK Only)| Liable for DTT, the “obligationMTT” field is set to false. |
@@ -76,7 +76,7 @@ The table here contains some information on the differences between the request 
 
 If the request is successful, it returns a response containing several pieces of information.
 
-| **Name** | **Description** | 
+| Name | Description | 
 | -------- | --------------- |
 | Processing date | Date and time the request was processed. |
 | Form bundle | Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return. |
