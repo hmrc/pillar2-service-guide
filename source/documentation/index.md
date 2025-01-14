@@ -31,19 +31,56 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 To help you navigate the information in the service guide, we’ve included a glossary of terms. 
 
-| Name                                            | Description                                                                                                                                                                   |
-|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| API - Application Programmer Interface          | Software code that enables communication between different applications.                                                                                                      |
-| CADX - Competent Authority Data Exchange        | HMRC Data Layer                                                                                                                                                               |
-| DTT - Domestic Topup Tax                        | A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT.                                                                 |
-| GAAP - Generally Accepted Accounting Principles | A set of rules and procedures UK companies follow when preparing their financial statements.                                                                                  |
-| IIR - Income Inclusion Rule                     | One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax. |
-| MDTP - Multi-channel Digital Tax Platform       | Hosts components which handle the authorisation and validation of the API request.                                                                                            |
-| MTT - Multinational Topup Tax                   | A new tax introduced as part of the UK adoption of Pillar 2, comprised of IIR and UTPR. Groups with UK and non-UK entities are liable for MTT.                                |
-| MNE - Multinational Enterprise                  | A business organisation with operations based in more than one country.                                                                                                       |
-| NFM - Nominated Filing Member                   | An entity nominated by the UPE to file Pillar 2 returns on their behalf.                                                                                                      |
-| UPE - Ultimate Parent Entity                    | The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation.                                                                                |
-| UTPR  - Undertaxed Profits Rule                 | One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK.                                      |
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API</strong> - Application Programmer Interface</td>
+<td>Software code that enables communication between different applications.</td>
+</tr>
+<tr>
+<td><strong>DTT</strong> - Domestic Topup Tax</td>
+<td>A new tax introduced as part of the UK adoption of Pillar 2. Groups with UK entities only are liable for DTT.</td>
+</tr>
+<tr>
+<td><strong>GAAP</strong> - Generally Accepted Accounting Principles</td>
+<td>A set of rules and procedures UK companies follow when preparing their financial statements.</td>
+</tr>
+<tr>
+<td><strong>IIR</strong> - Income Inclusion Rule</td>
+<td>One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax.</td>
+</tr>
+<tr>
+<td><strong>MDTP</strong> - Multi-channel Digital Tax Platform</td>
+<td>Hosts components which handle the authorisation and validation of the API request.</td>
+</tr>
+<tr>
+<td><strong>MTT</strong> - Multinational Topup Tax</td>
+<td>A new tax introduced as part of the UK adoption of Pillar 2, comprised of IIR and UTPR. Groups with UK and non-UK entities are liable for MTT.</td>
+</tr>
+<tr>
+<td><strong>MNE</strong> - Multinational Enterprise</td>
+<td>A business organisation with operations based in more than one country.</td>
+</tr>
+<tr>
+<td><strong>NFM</strong> - Nominated Filing Member</td>
+<td>An entity nominated by the UPE to file Pillar 2 returns on their behalf.</td>
+</tr>
+<tr>
+<td><strong>UPE</strong> - Ultimate Parent Entity</td>
+<td>The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation.</td>
+</tr>
+<tr>
+<td><strong>UTPR</strong>  - Undertaxed Profits Rule</td>
+<td>One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -68,20 +105,58 @@ The request structure has four variants created from two dependencies.
 
 The table here contains some information on the differences between the request variants.
 
-| Return Variant             | Description                                                                                                                                                  |
-|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Nil Return (MNE/UK)        | Liable for MTT, the “obligationMTT” field is set to true.                                                                                                    |
-| Nil Return (UK Only)       | Liable for DTT, the “obligationMTT” field is set to false.                                                                                                   |
-| Liability return (MNE/UK)  | Request includes totals for DTT, IIR, UTPR and overall total. The “obligationMTT” field is set to true.                                                      |
-| Liability return (UK Only) | Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. The “obligationMTT” field is set to false. |
+<table>
+<thead>
+<tr>
+<th>Return Variant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nil Return (MNE/UK)</td>
+<td>Liable for MTT, the “obligationMTT” field is set to true.</td>
+</tr>
+<tr>
+<td>Nil Return (UK Only)</td>
+<td>Liable for DTT, the “obligationMTT” field is set to false.</td>
+</tr>
+<tr>
+<td>Liability return (MNE/UK)</td>
+<td>Request includes totals for DTT, IIR, UTPR and overall total. The “obligationMTT” field is set to true.</td>
+</tr>
+<tr>
+<td>Liability return (UK Only)</td>
+<td>Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. The “obligationMTT” field is set to false.</td>
+</tr>
+</tbody>
+</table>
+
 
 If the request is successful, it returns a response containing several pieces of information.
 
-| Name             | Description                                                                                                               | 
-|------------------|---------------------------------------------------------------------------------------------------------------------------|
-| Processing date  | Date and time the request was processed.                                                                                  |
-| Form bundle      | Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return.       |
-| Charge reference | Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference). |
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Processing date</td>
+<td>Date and time the request was processed.</td>
+</tr>
+<tr>
+<td>Form bundle</td>
+<td>Unique identifier for the request, to be noted and retained in case amendments need to be filed against the return.</td>
+</tr>
+<tr>
+<td>Charge reference</td>
+<td>Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference).</td>
+</tr>
+</tbody>
+</table>
 
 You can find examples for each different request variant (and their responses) in the Endpoints page of the API reference guide. 
 
