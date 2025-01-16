@@ -24,7 +24,7 @@ The API provides MNEs (and their agents) with the capability to
 
 To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a **Pillar 2 ID**, which is generated when an MNE registers and subscribes to the service. 
 
-In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations (approximately 4000). The communication outlined the registration process and also confirmed the registration deadline. 
+In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations. The communication outlined the registration process and also confirmed the registration deadline. 
 
 **Important**: The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
 
@@ -55,7 +55,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 </tr>
 <tr>
 <td><strong>IIR</strong> - Income Inclusion Rule</td>
-<td>One of the 3 Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax.</td>
+<td>One of the three Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax.</td>
 </tr>
 <tr>
 <td><strong>MTT</strong> - Multinational Topup Tax</td>
@@ -84,9 +84,9 @@ To help you navigate the information in the service guide, we’ve included a gl
 
 ## Agent Services
 
-Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or nominated filing member (**NFM**). 
+Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or Nominated Filing Member (**NFM**). 
 
-Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). You can then use your [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones.  
+Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones.  
 
 
 ## API Requests
@@ -161,7 +161,7 @@ If the request is successful, it returns a response containing several pieces of
 </tr>
 <tr>
 <td>Charge reference</td>
-<td>Identifier for any liabilities specified in the return. (Nil returns have no charge so don’t require a charge reference).</td>
+<td>Identifier for any liabilities specified in the return. Nil returns have no charge so don’t require a charge reference.</td>
 </tr>
 </tbody>
 </table>
@@ -175,7 +175,7 @@ If a submitted UKTR needs to be updated, an amendment can be sent via the API.
 
 The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned (see the **Errors** section of the API [reference guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
-For Pillar 2, all submitted returns have an **amendment window**. This is a period of 12 months after the submit due date where you can amend the return for the specified accounting period. Multiple amendments can be submitted during the 12 month period. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
+For Pillar 2, all submitted returns have an **amendment window**. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 15 months for the first accounting period, and 12 months for subsequent accounting periods, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
@@ -184,7 +184,7 @@ If the amend request is successful, it returns a response containing a processin
 
 ## Submit Below Threshold Notification
 
-If group revenues fall below the level where the Pillar 2 tax is applied, sending a BTN (Below-Threshold Notification) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
+If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN (Below Threshold Notification) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
 
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
@@ -202,11 +202,11 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 
 ### Compatible Software
 
-“Compatible software’” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
+“Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
 
 - Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN
-- Make adjustments to a submitted tax return (if required)
+- Make amendments to a submitted tax return (if required)
 - Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own and have access to all their records created and be able to export these records, if necessary.
 - Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
 - Make a final declaration or divert a customer into a channel where they can make it.
@@ -223,8 +223,8 @@ HMRC recognises customers or agents will use different pieces of software if an 
 
 Pillar 2 will offer support for organisations in checking eligibility and registering for the service, prepay taxes and later on file returns and be tax compliant in the UK and globally.
 
-API support is available 07.00 -19.00 Monday - Friday. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
+API support is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
 
-Pillar 2 (Telephone ) support is available via contact centres 08.30-17.00 Monday - Friday. Calls are escalated to the Specialist Team. Specialist Team and CRMs email support is available 8.30 - 17:00.
+Pillar 2 (Telephone ) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRMs email support is available 8.30-17:00.
 
 ## Changelog
