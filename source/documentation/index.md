@@ -11,7 +11,7 @@ Version 1.0 issued 23 December 2024
 ## Overview
 
 This service guide explains how you can integrate your software with the Pillar 2 Submission API. 
-**Pillar 2** is the name of a set of regulations introduced by the Organisation for Economic Cooperation and Development (**OECD**) to function as a global minimum tax. It is intended to ensure Multinational Enterprises (**MNEs**) with a turnover of >€750m are subject to a minimum Effective Tax Rate of 15%.
+**Pillar 2** is the name of a set of regulations introduced by the Organisation for Economic Cooperation and Development (**OECD**) to function as a global minimum tax. It is intended to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate of 15%.
 
 The API provides MNEs (and their agents) with the capability to
 
