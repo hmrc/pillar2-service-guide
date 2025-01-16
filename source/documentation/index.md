@@ -19,6 +19,7 @@ The API provides MNEs (and their agents) with the capability to
 - amend a submitted UKTR.
 - submit a Below Threshold Notification (**BTN**).
 
+
 ## Getting Started
 
 To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a **Pillar 2 ID**, which is generated when an MNE registers and subscribes to the service. 
@@ -26,6 +27,7 @@ To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an ob
 In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations (approximately 4000). The communication outlined the registration process and also confirmed the registration deadline. 
 
 **Important**: The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
+
 
 ## Glossary
 
@@ -85,6 +87,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or nominated filing member (**NFM**). 
 
 Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). You can then use your [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones.  
+
 
 ## API Requests
 
@@ -165,6 +168,7 @@ If the request is successful, it returns a response containing several pieces of
 
 You can find examples for each different request variant (and their responses) in the Endpoints page of the API reference guide. 
 
+
 ## Amend UK Tax Return
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
@@ -177,6 +181,7 @@ If the return is the focus of an active enquiry, amendments are not processed un
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
 
+
 ## Submit Below Threshold Notification
 
 If group revenues fall below the level where the Pillar 2 tax is applied, sending a BTN (Below-Threshold Notification) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
@@ -185,9 +190,11 @@ Your group can submit a BTN if consolidated annual revenues are below €750 mil
 
 A SubmitBTN request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
 
+
 ## Testing Requirements
 
 You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 Submission API. 
+
 
 ## Software Requirements
 
@@ -205,6 +212,7 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 - Make a final declaration or divert a customer into a channel where they can make it.
 
 HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). 
+
 
 ### Bridging Software
 
