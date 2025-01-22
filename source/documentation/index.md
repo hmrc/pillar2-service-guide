@@ -17,7 +17,7 @@ The API provides MNEs (and their agents) with the capability to
 
 - submit a UK tax return (**UKTR**).
 - amend a submitted UKTR.
-- submit a Below Threshold Notification (**BTN**).
+- submit a Below-Threshold Notification (**BTN**).
 
 
 ## Getting Started
@@ -75,7 +75,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 </tr>
 <tr>
 <td><strong>UTPR</strong>  - Undertaxed Profits Rule</td>
-<td>One of 3 Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK.</td>
+<td>One of the three Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK.</td>
 </tr>
 </tbody>
 </table>
@@ -95,12 +95,11 @@ To use the API, information is submitted in an API request, which is then valida
 
 The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
 
-<img src="/source/images/SubmitUKTR_SubmitBTN_301224.svg" alt="SubmitUKTR Submit BTN" style="width:800px" style="border: 1px solid black"/>
+<img src="/source/images/SubmitUKTR_SubmitBTN_301224.svg" alt="SubmitUKTR Submit BTN" style="width:800px;" style="border: 1px solid black;"/>
 
 The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-<img src="/source/images/AmendUKTR_090125.svg" alt="AmendUKTR" style="width:800px" style="border: 1px solid black"/>
-
+<img src="/source/images/AmendUKTR_090125.jpg" alt="AmendUKTR" style="width:800px;" style="border: 1px solid black;"/>
 
 ## Submit UK Tax Return
 
@@ -127,11 +126,11 @@ The table here contains some information on the differences between the request 
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
-<td>Liable for DTT, the <strong>obligationMTT”</strong> field is set to false.</td>
+<td>Liable for DTT, the <strong>obligationMTT</strong> field is set to false.</td>
 </tr>
 <tr>
 <td>Liability return (MNE/UK)</td>
-<td>Request includes totals for DTT, IIR, UTPR and overall total. The <strong>obligationMTT”</strong> field is set to true.</td>
+<td>Request includes totals for DTT, IIR, UTPR and overall total. The <strong>obligationMTT</strong> field is set to true.</td>
 </tr>
 <tr>
 <td>Liability return (UK Only)</td>
@@ -173,18 +172,18 @@ You can find examples for each different request variant (and their responses) i
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned (see the **Errors** section of the API [reference guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the **Errors** section of the API [reference guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
-For Pillar 2, all submitted returns have an **amendment window**. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 15 months for the first accounting period, and 12 months for subsequent accounting periods, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
+For Pillar 2, all submitted returns have an **amendment window**. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 15 months for the first accounting period, and 12 months for subsequent accounting periods. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
 
 
-## Submit Below Threshold Notification
+## Submit Below-Threshold Notification
 
-If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN (Below Threshold Notification) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
+If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN (Below-Threshold Notification) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
 
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
@@ -205,10 +204,10 @@ Any software solutions which integrate with the Pillar 2 Submission API should c
 “Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
 
 - Provide HMRC with transaction monitoring fraud prevention header data.
-- Submit a UKTR, or a BTN
-- Make amendments to a submitted tax return (if required)
+- Submit a UKTR, or a BTN.
+- Make amendments to a submitted tax return (if required).
 - Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own and have access to all their records created and be able to export these records, if necessary.
-- Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software 
+- Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software.
 - Make a final declaration or divert a customer into a channel where they can make it.
 
 HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). 
@@ -225,6 +224,6 @@ Pillar 2 will offer support for organisations in checking eligibility and regist
 
 API support is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
 
-Pillar 2 (Telephone ) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRMs email support is available 8.30-17:00.
+Pillar 2 (Telephone) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17:00.
 
 ## Changelog
