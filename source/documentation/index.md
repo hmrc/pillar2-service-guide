@@ -1,16 +1,16 @@
 ---
-title: Pillar 2 Submission API Service Guide
+title: Pillar 2 API Service Guide
 weight: 1
 ---
 
-# Pillar 2 Submission API Service Guide
+# Pillar 2 API Service Guide
 
 Version 1.0 issued 23 December 2024
 ***
 
 ## Overview
 
-This service guide explains how you can integrate your software with the Pillar 2 Submission API. 
+This service guide explains how you can integrate your software with the Pillar 2 API. 
 **Pillar 2** is the name of a set of regulations introduced by the Organisation for Economic Cooperation and Development (**OECD**) to function as a global minimum tax. It is intended to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate of 15%.
 
 The API provides MNEs (and their agents) with the capability to
@@ -55,7 +55,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 </tr>
 <tr>
 <td><strong>IIR</strong> - Income Inclusion Rule</td>
-<td>One of the three Pillar 2 rules.  If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax.</td>
+<td>One of the three Pillar 2 rules. If the country where the profits are located does not accept the tax, then the country where the company is headquartered will receive the tax.</td>
 </tr>
 <tr>
 <td><strong>MTT</strong> - Multinational Topup Tax</td>
@@ -74,7 +74,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 <td>The entity liable for filing Pillar 2 returns. Can be part of an MNE or a single organisation.</td>
 </tr>
 <tr>
-<td><strong>UTPR</strong>  - Undertaxed Profits Rule</td>
+<td><strong>UTPR</strong> - Undertaxed Profits Rule</td>
 <td>One of the three Pillar 2 rules, ensuring that any taxes not paid under another jurisdiction’s Pillar 2 rules are brought into charge in the UK.</td>
 </tr>
 </tbody>
@@ -86,7 +86,7 @@ To help you navigate the information in the service guide, we’ve included a gl
 
 Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or Nominated Filing Member (**NFM**). 
 
-Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones.  
+Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones. 
 
 
 ## API Requests
@@ -95,20 +95,23 @@ To use the API, information is submitted in an API request, which is then valida
 
 The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
 
-<img src="/source/images/SubmitUKTR_SubmitBTN_301224.svg" alt="SubmitUKTR Submit BTN" style="width:800px;border: 1px solid black;">
+<img src="/source/images/SubmitUKTR_SubmitBTN_301224.svg" alt="SubmitUKTR Submit BTN" style="width:800px;border:1px solid black;">
 
 The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-<img src="/source/images/AmendUKTR_090125.svg" alt="AmendUKTR" style="width:800px;border: 1px solid black;">
+<img src="/source/images/AmendUKTR_090125.svg" alt="AmendUKTR" style="width:800px;border:1px solid black;">
 
 ## Submit UK Tax Return
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 Submission API to submit the UKTR and meet this obligation. 
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
 
 The request structure has four variants created from two dependencies.
-1. Are the group entities UK only or are they a mixture of UK and non-UK entities? 
-   **Note**: This information needs to be confirmed during registration for Pillar 2. 
-2. Is the return a **Nil** return?
+
+<ol>
+  <li>Are the group entities UK only or are they a mixture of UK and non-UK entities? 
+   <strong>Note</strong>: This information needs to be confirmed during registration for Pillar 2. </li>
+  <li>Is the return a nil return?</li>
+</ol> 
 
 The table here contains some information on the differences between the request variants.
 
@@ -172,7 +175,7 @@ You can find examples for each different request variant (and their responses) i
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the **Errors** section of the API [reference guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the **Errors** section of the API [reference guide](https://developer.tax.service.gov.uk/api-documentation/docs/api/service/pillar2--api/1.0).
 
 For Pillar 2, all submitted returns have an **amendment window**. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 15 months for the first accounting period, and 12 months for subsequent accounting periods. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
 
@@ -192,12 +195,12 @@ A SubmitBTN request requires you to send the accounting period start and end dat
 
 ## Testing Requirements
 
-You can test the Pillar 2 Submission API in the [HMRC Developer Hub](https://developer.qa.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.qa.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 Submission API. 
+You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 API. 
 
 
 ## Software Requirements
 
-Any software solutions which integrate with the Pillar 2 Submission API should comply with the requirements listed here. 
+Any software solutions which integrate with the Pillar 2 API should comply with the requirements listed here. 
 
 ### Compatible Software
 
