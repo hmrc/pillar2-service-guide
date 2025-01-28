@@ -2,7 +2,3 @@
 GET     /guides/pillar2-service-guide           controllers.Default.redirect(to = "/guides/pillar2-service-guide/")
 GET     /guides/pillar2-service-guide/          controllers.Assets.at(path="/public", file="index.html")
 GET     /guides/pillar2-service-guide/*file     controllers.Assets.at(path="/public", file)
-
-GET     /guides/example-service-guide           controllers.Default.redirect(to = "/guides/example-service-guide/")
-GET     /guides/example-service-guide/          controllers.Assets.at(path="/public", file="index.html")
-GET     /guides/example-service-guide/*file     controllers.Assets.at(path="/public", file)
