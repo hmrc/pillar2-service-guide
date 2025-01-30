@@ -100,7 +100,7 @@ The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they comple
 
 The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-<img src="images/AmendUKTR_090125.jpg" alt="AmendUKTR" style="width:800px" style="border: 1px solid black"/>
+<img src="images/AmendUKTR_090125.svg" alt="AmendUKTR" style="width:800px" style="border: 1px solid black"/>
 
 ## Submit UK Tax Return
 
