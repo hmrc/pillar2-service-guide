@@ -228,6 +228,6 @@ Pillar 2 will offer support for organisations in checking eligibility and regist
 
 API support is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
 
-Pillar 2 (Telephone) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17:00.
+Pillar 2 (Telephone) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
 
 ## Changelog
