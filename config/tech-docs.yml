@@ -1,5 +1,5 @@
 # Human read-able name for this site, displayed in the header bar
-service_name: Pillar 2 Submission API Service Guide
+service_name: Pillar 2 API Service Guide
 
 # The route that will be used to access this site (with tailing slash)
 service_link: /guides/pillar2-service-guide/
