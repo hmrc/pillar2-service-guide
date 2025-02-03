@@ -23,7 +23,7 @@ The API provides MNEs (and their agents) with the capability to
 
 ## Getting started
 
-To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a **Pillar 2 ID**, which is generated when an MNE registers and subscribes to the service. 
+To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a *Pillar 2 ID*, which is generated when an MNE registers and subscribes to the service. 
 
 In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations. The communication outlined the registration process and also confirmed the registration deadline. 
 
@@ -32,7 +32,7 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 ## Glossary
 
-To help you navigate the information in the service guide, there will be a glossary of terms included. The glossary of terms is currently under review. 
+To help you navigate the information in the service guide, there will be a glossary of terms included. The glossary of terms is currently under review with the HMRC policy team. 
 
 
 ## Agent services
@@ -46,16 +46,9 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 To use the API, information is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
-The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
+- The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
+- The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-
-<img src="images/SubmitUKTR_SubmitBTN_301224.svg" alt="SubmitUKTR Submit BTN" style="width:800px" style="border: 1px solid black"/>
-
-
-The AmendUKTR request returns an HTTP 200 response if it completes successfully.
-
-
-<img src="images/AmendUKTR_090125.svg" alt="AmendUKTR" style="width:800px" style="border: 1px solid black"/>
 
 
 ## Submit UK Tax Return
@@ -65,7 +58,7 @@ Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an 
 The request structure has four variants created from two dependencies.
 
 <ol>
-  <li>Are the group entities UK only or are they a mixture of UK and non-UK entities? (This information needs to be confirmed during registration for Pillar 2.) </li>
+  <li>Are the group entities UK only or are they a mixture of UK and non-UK entities? This information <em>must</em> be confirmed during registration for Pillar 2. </li>
   <li>Is the return a nil return?</li>
 </ol> 
 
@@ -131,9 +124,9 @@ You can find examples for each different request variant (and their responses) i
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the "Errors" section of the API [reference guide](https://developer.tax.service.gov.uk/api-documentation/docs/api/service/pillar2--api/1.0).
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the "Errors" section of the API reference guide.
 
-For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date. and you cannot amend a return after the amendment window end date. 
+For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
