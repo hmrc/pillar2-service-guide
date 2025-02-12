@@ -32,7 +32,7 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 ## Glossary
 
-To help you navigate the information in the service guide, there will be a glossary of terms included. 
+To help you navigate the information in the service guide, we've included a glossary of terms. 
 
 <table>
 <thead>
