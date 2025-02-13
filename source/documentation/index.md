@@ -112,11 +112,11 @@ To use the API, information is submitted in an API request, which is then valida
 
 - The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
 
-<a href="images/SubmitUKTR_SubmitBTN_130225.svg" target="blank"><img src="images/SubmitUKTR_SubmitBTN_130225.svg" alt="" style="width:720px;" /></a>
+<a href="images/SubmitUKTR_SubmitBTN_130225.svg" target="blank"><img src="images/SubmitUKTR_SubmitBTN_301224.svg" alt="" style="width:720px;" /></a>
 
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-<a href="images/AmendUKTR_130225.svg" target="blank"><img src="images/AmendUKTR_130225.svg" alt="Amend UK Tax Return" style="width:720px;" /></a>
+<a href="images/AmendUKTR_130225.svg" target="blank"><img src="images/AmendUKTR_090125.svg" alt="Amend UK Tax Return" style="width:720px;" /></a>
 
 ## Submit UK Tax Return
 
