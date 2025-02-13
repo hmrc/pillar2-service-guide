@@ -111,9 +111,12 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 To use the API, information is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
 - The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
+
+<a href="images/SubmitUKTR_SubmitBTN_130225.svg" target="blank"><img src="images/SubmitUKTR_SubmitBTN_130225.svg" alt="" style="width:720px;" /></a>
+
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 
-
+<a href="images/AmendUKTR_130225.svg" target="blank"><img src="images/AmendUKTR_130225.svg" alt="Amend UK Tax Return" style="width:720px;" /></a>
 
 ## Submit UK Tax Return
 
