@@ -119,6 +119,7 @@ If the request is successful, it returns a response containing several pieces of
 
 You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
 
+![Flow Diagram Showing How to Submit UKTR](images/SubmitUKTR_090125.svg "Submit UK Tax Return")
 
 ## Amend UK Tax Return
 
@@ -132,6 +133,8 @@ If the return is the focus of an active enquiry, amendments are not processed un
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
 
+![Flow Diagram Showing How to Amend UKTR](images/AmendUKTR_090125.svg "Amend UK Tax Return")
+
 
 ## Submit Below-Threshold Notification
 
@@ -140,7 +143,6 @@ If group revenues fall below the threshold where the Pillar 2 tax is applied, se
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
 A SubmitBTN request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
-
 
 ## Testing requirements
 
