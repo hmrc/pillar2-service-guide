@@ -32,7 +32,73 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 ## Glossary
 
-To help you navigate the information in the service guide, there will be a glossary of terms included. The glossary of terms is currently under review with the HMRC policy team. 
+A glossary of terms has been created to help you navigate the information in the service guide. 
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API</strong> - Application Programming Interface</td>
+<td>Software code that enables communication between different applications.</td>
+</tr>
+<tr>
+<td><strong>BTN</strong> - Below-Threshold Notification</td>
+<td>A notification sent to HMRC if group revenues fall below the level where Pillar 2 charges are applied. Sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods.</td>
+</tr>
+<tr>
+<td><strong>DTT</strong> - Domestic Top-up Tax</td>
+<td>A new UK tax introduced with the adoption of Pillar 2. DTT charges UK entities to tax where there are low-taxed UK profits. Groups with only UK entities are subject to DTT only, while groups subject to MTT are also subject to DTT. The UK’s DTT is a Qualifying Domestic Minimum Top-up Tax (<strong>QDMTT</strong>) with safe-harbour status.</td>
+</tr>
+<tr>
+<td><strong>GAAP</strong> - Generally Accepted Accounting Practice and Principles</td>
+<td>The standard accounting rules for preparing, presenting and reporting financial statements.</td>
+</tr>
+<tr>
+<td><strong>GIR</strong> - GloBE Information Return</td>
+<td>A standardised information return for Pillar 2 published by the OECD.</td>
+</tr>
+<tr>
+<td><strong>IIR</strong> - Income Inclusion Rule</td>
+<td>One of the Pillar 2 charging mechanisms. The parent entity is charged a top-up tax where it has an interest in entities located in another jurisdiction, and the group’s profits in that jurisdiction are taxed at below 15%.</td>
+</tr>
+<tr>
+<td><strong>MTT</strong> - Multinational Top-up Tax</td>
+<td>A new UK tax introduced with the adoption of Pillar 2, comprising 2 components (IIR and UTPR). MTT charges UK entities to tax where there are low-taxed profits outside the UK. Groups with UK and non-UK entities are liable for MTT.</td>
+</tr>
+<tr>
+<td><strong>MNE</strong> - Multinational Enterprise</td>
+<td>A business organisation with operations based in more than one country.</td>
+</tr>
+<tr>
+<td><strong>NFM</strong> - Nominated Filing Member</td>
+<td>A company nominated by the UPE to file Pillar 2 returns on their behalf.</td>
+</tr>
+<tr>
+<td><strong>ORN</strong> - Overseas Return Notification</td>
+<td>A notice informing HMRC of the jurisdiction where the group’s GIR has been submitted. </td>
+</tr>
+<tr>
+<td><strong>UKTR</strong> - UK Tax Return</td>
+<td>A UK specific return for reporting the self-assessment of MTT and DTT liabilities.</td>
+</tr>
+<tr>
+<td><strong>UPE</strong> - Ultimate Parent Entity</td>
+<td>An entity that does not have another entity with a controlling interest in it.  Can be part of an MNE or a single UK entity. The UPE will be the filing member unless it has nominated another filing member.</td>
+</tr>
+<tr>
+<td><strong>UTPR</strong> - Undertaxed Profits Rule</td>
+<td>One of the Pillar 2 charging mechanisms. A top-up tax charged where the MNE’s structure means that profits cannot be taxed by the IIR rule.</td>
+</tr>
+</tbody>
+</table>
+
+
+
 
 
 ## Agent services
