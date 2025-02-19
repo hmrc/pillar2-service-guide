@@ -119,7 +119,7 @@ If the request is successful, it returns a response containing several pieces of
 
 You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
 
-![Flow Diagram Showing How to Submit UKTR](images/SubmitUKTR_090125.svg "Submit UK Tax Return")
+![Flow Diagram Showing How to Submit UKTR](SubmitUKTR_090125.svg "Submit UK Tax Return")
 
 ## Amend UK Tax Return
 
@@ -133,7 +133,7 @@ If the return is the focus of an active enquiry, amendments are not processed un
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
 
-![Flow Diagram Showing How to Amend UKTR](images/AmendUKTR_090125.svg "Amend UK Tax Return")
+![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
 
 
 ## Submit Below-Threshold Notification
