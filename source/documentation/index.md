@@ -113,7 +113,10 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 To use the API, information is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
 - The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
+![Flow Diagram Showing How to Submit UKTR and BTN](SubmitUKTR_090125.svg "Submit UK Tax Return Submit BTN")
+
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
+![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
 
 
 
@@ -185,7 +188,7 @@ If the request is successful, it returns a response containing several pieces of
 
 You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
 
-![Flow Diagram Showing How to Submit UKTR](SubmitUKTR_090125.svg "Submit UK Tax Return")
+
 
 ## Amend UK Tax Return
 
@@ -198,8 +201,6 @@ For Pillar 2, all submitted returns have an *amendment window*. This is a period
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
-
-![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
 
 
 ## Submit Below-Threshold Notification
