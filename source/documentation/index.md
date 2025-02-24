@@ -68,7 +68,7 @@ A glossary of terms has been created to help you navigate the information in the
 </tr>
 <tr>
 <td><strong>MTT</strong> - Multinational Top-up Tax</td>
-<td>A new UK tax introduced with the adoption of Pillar 2, comprising 2 components (IIR and UTPR). MTT charges UK entities to tax where there are low-taxed profits outside the UK. Groups with UK and non-UK entities are liable for MTT.</td>
+<td>A new UK tax introduced with the adoption of Pillar 2, comprised of two components (IIR and UTPR). MTT charges UK entities to tax where there are low-taxed profits outside the UK. Groups with UK and non-UK entities are liable for MTT.</td>
 </tr>
 <tr>
 <td><strong>MNE</strong> - Multinational Enterprise</td>
@@ -120,7 +120,7 @@ To use the API, information is submitted in an API request, which is then valida
 
 
 
-## Submit UK Tax Return
+## Submit UK tax return
 
 Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
 
@@ -190,7 +190,7 @@ You can find examples for each different request variant (and their responses) i
 
 
 
-## Amend UK Tax Return
+## Amend UK tax return
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
@@ -203,7 +203,7 @@ If the return is the focus of an active enquiry, amendments are not processed un
 If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
 
 
-## Submit Below-Threshold Notification
+## Submit below-threshold notification
 
 If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods. 
 
@@ -244,8 +244,8 @@ HMRC recognises customers or agents will use different pieces of software if an 
 
 Pillar 2 will offer support for organisations in checking eligibility and registering for the service, prepay taxes and later on file returns and be tax compliant in the UK and globally.
 
-API support is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message will be displayed.
+*API support* is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message will be displayed.
 
-Pillar 2 (Telephone) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
+*Pillar 2 (Telephone) support* is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
 
 ## Changelog
