@@ -118,6 +118,8 @@ To use the API, information is submitted in an API request, which is then valida
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 ![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
 
+You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
+
 
 
 ## Submit UK tax return
@@ -185,8 +187,6 @@ If the request is successful, it returns a response containing several pieces of
 </tr>
 </tbody>
 </table>
-
-You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
 
 
 
