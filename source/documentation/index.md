@@ -194,7 +194,7 @@ If the request is successful, it returns a response containing several pieces of
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the "Errors" section of the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find more information on code 44 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
 For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
@@ -222,7 +222,7 @@ Any software solutions which integrate with the Pillar 2 API should comply with 
 
 ### Compatible software
 
-“Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
+“Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet these minimum functionality standards. 
 
 - Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN.
