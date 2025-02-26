@@ -16,9 +16,9 @@ This service guide explains how you can integrate your software with the Pillar 
 
 The API provides MNEs (and their agents) with the capability to
 
-- submit a UK tax return (**UKTR**).
-- amend a submitted UKTR.
-- submit a Below-Threshold Notification (**BTN**).
+- submit a UK tax return (**UKTR**)
+- amend a submitted UKTR
+- submit a Below-Threshold Notification (**BTN**)
 
 
 ## Getting started
@@ -213,7 +213,7 @@ A SubmitBTN request requires you to send the accounting period start and end dat
 
 ## Testing requirements
 
-You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 API. 
+You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.tax.service.gov.uk/api-documentation/docs/using-the-hub). The [Pillar 2 API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
 
 
 ## Software requirements
