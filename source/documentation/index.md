@@ -51,6 +51,10 @@ A glossary of terms has been created to help you navigate the information in the
 <td>A notification sent to HMRC if group revenues fall below the level where Pillar 2 charges are applied. Sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods.</td>
 </tr>
 <tr>
+<td><strong>CRN</strong> - Company Registration Number</td>
+<td>The CRN can be used as a unique identifier for an entity in an API request.</td>
+</tr>
+<tr>
 <td><strong>DTT</strong> - Domestic Top-up Tax</td>
 <td>A new UK tax introduced with the adoption of Pillar 2. DTT charges UK entities to tax where there are low-taxed UK profits. Groups with only UK entities are subject to DTT only, while groups subject to MTT are also subject to DTT. The UK’s DTT is a Qualifying Domestic Minimum Top-up Tax (<strong>QDMTT</strong>) with safe-harbour status.</td>
 </tr>
@@ -94,12 +98,12 @@ A glossary of terms has been created to help you navigate the information in the
 <td><strong>UTPR</strong> - Undertaxed Profits Rule</td>
 <td>One of the Pillar 2 charging mechanisms. A top-up tax charged where the MNE’s structure means that profits cannot be taxed by the IIR rule.</td>
 </tr>
+<tr>
+<td><strong>UTR</strong> - Unique Taxpayer Reference</td>
+<td>The UTR for corporation tax can be used as a unique identifier for an entity in an API request.</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
 
 ## Agent services
 
@@ -133,7 +137,7 @@ The request structure has four variants created from two dependencies.
   <li>Is the return a nil return?</li>
 </ol> 
 
-The table here contains some information on the differences between the request variants.
+The table here contains some information on the differences between the request variants. Liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax. 
 
 <table>
 <thead>
@@ -145,11 +149,11 @@ The table here contains some information on the differences between the request 
 <tbody>
 <tr>
 <td>Nil Return (MNE/UK)</td>
-<td>Liable for MTT, the <em>obligationMTT</em> field is set to true.</td>
+<td>The <em>obligationMTT</em> field is set to true.</td>
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
-<td>Liable for DTT, the <em>obligationMTT</em> field is set to false.</td>
+<td>The <em>obligationMTT</em> field is set to false.</td>
 </tr>
 <tr>
 <td>Liability return (MNE/UK)</td>
@@ -195,6 +199,8 @@ If the request is successful, it returns a response containing several pieces of
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
 The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find more information on code 44 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+
+Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
 For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
