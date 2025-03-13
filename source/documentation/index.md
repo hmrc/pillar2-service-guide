@@ -122,7 +122,7 @@ To use the API, information is submitted in an API request, which is then valida
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
 ![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
 
-You can find examples for each different request variant (and their responses) in the "Endpoints" page of the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). 
+You can find examples for each different request variant (and their responses) in the "Endpoints" section of the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). 
 
 
 
@@ -149,7 +149,7 @@ The table here contains some information on the differences between the request 
 <tbody>
 <tr>
 <td>Nil Return (MNE/UK)</td>
-<td>The <em>obligationMTT</em> field is set to true.</td>
+<td>The <em>obligationMTT</em> field cannot be set to true for a domestic only group.</td>
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
@@ -198,7 +198,7 @@ If the request is successful, it returns a response containing several pieces of
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find more information on code 44 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 044 error is returned. You can find more information on code 044 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
 Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
@@ -206,7 +206,7 @@ For Pillar 2, all submitted returns have an *amendment window*. This is a period
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
-If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
+If the amend request is successful, it returns a response containing a processing date and a charge reference (unless the amendment changes a liability return to a Nil Return, where no charge reference is issued).
 
 
 ## Submit below-threshold notification
@@ -219,7 +219,7 @@ A SubmitBTN request requires you to send the accounting period start and end dat
 
 ## Testing requirements
 
-You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.tax.service.gov.uk/api-documentation/docs/using-the-hub). The [Pillar 2 API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
+You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub). The [Pillar 2 API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
 
 
 ## Software requirements
@@ -253,5 +253,3 @@ Pillar 2 will offer support for organisations in checking eligibility and regist
 *API support* is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message will be displayed.
 
 *Pillar 2 (Telephone) support* is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
-
-## Changelog
