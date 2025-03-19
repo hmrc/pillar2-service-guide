@@ -10,15 +10,15 @@ Version 1.0 issued 30 January 2025
 
 ## Overview
 
-This service guide explains how you can integrate your software with the Pillar 2 API. 
+This service guide explains how you can integrate your software with the [Pillar 2 API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). 
 
 *Pillar 2* is the term given to the Global Anti-Base Erosion Rules (**GloBE**) published by the Organisation for Economic Cooperation and Development (**OECD**) in 2023. GloBE was designed to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate (**ETR**) of 15% in each jurisdiction where they are operating. To implement Pillar 2, the UK has introduced a Multinational Top-up Tax (**MTT**) and a Domestic Top-up Tax (**DTT**). 
 
 The API provides MNEs (and their agents) with the capability to
 
-- submit a UK tax return (**UKTR**).
-- amend a submitted UKTR.
-- submit a Below-Threshold Notification (**BTN**).
+- submit a UK tax return (**UKTR**)
+- amend a submitted UKTR
+- submit a Below-Threshold Notification (**BTN**)
 
 
 ## Getting started
@@ -32,8 +32,78 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 ## Glossary
 
-To help you navigate the information in the service guide, there will be a glossary of terms included. The glossary of terms is currently under review with the HMRC policy team. 
+A glossary of terms has been created to help you navigate the information in the service guide. 
 
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API</strong> - Application Programming Interface</td>
+<td>Software code that enables communication between different applications.</td>
+</tr>
+<tr>
+<td><strong>BTN</strong> - Below-Threshold Notification</td>
+<td>A notification sent to HMRC if group revenues fall below the level where Pillar 2 charges are applied. Sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods.</td>
+</tr>
+<tr>
+<td><strong>CRN</strong> - Company Registration Number</td>
+<td>The CRN can be used as a unique identifier for an entity in an API request.</td>
+</tr>
+<tr>
+<td><strong>DTT</strong> - Domestic Top-up Tax</td>
+<td>A new UK tax introduced with the adoption of Pillar 2. DTT charges UK entities to tax where there are low-taxed UK profits. Groups with only UK entities are subject to DTT only, while groups subject to MTT are also subject to DTT. The UK’s DTT is a Qualifying Domestic Minimum Top-up Tax (<strong>QDMTT</strong>) with safe-harbour status.</td>
+</tr>
+<tr>
+<td><strong>GAAP</strong> - Generally Accepted Accounting Practice and Principles</td>
+<td>The standard accounting rules for preparing, presenting and reporting financial statements.</td>
+</tr>
+<tr>
+<td><strong>GIR</strong> - GloBE Information Return</td>
+<td>A standardised information return for Pillar 2 published by the OECD.</td>
+</tr>
+<tr>
+<td><strong>IIR</strong> - Income Inclusion Rule</td>
+<td>One of the Pillar 2 charging mechanisms. The parent entity is charged a top-up tax where it has an interest in entities located in another jurisdiction, and the group’s profits in that jurisdiction are taxed at below 15%.</td>
+</tr>
+<tr>
+<td><strong>MTT</strong> - Multinational Top-up Tax</td>
+<td>A new UK tax introduced with the adoption of Pillar 2, comprised of two components (IIR and UTPR). MTT charges UK entities to tax where there are low-taxed profits outside the UK. Groups with UK and non-UK entities are liable for MTT.</td>
+</tr>
+<tr>
+<td><strong>MNE</strong> - Multinational Enterprise</td>
+<td>A business organisation with operations based in more than one country.</td>
+</tr>
+<tr>
+<td><strong>NFM</strong> - Nominated Filing Member</td>
+<td>A company nominated by the UPE to file Pillar 2 returns on their behalf.</td>
+</tr>
+<tr>
+<td><strong>ORN</strong> - Overseas Return Notification</td>
+<td>A notice informing HMRC of the jurisdiction where the group’s GIR has been submitted. </td>
+</tr>
+<tr>
+<td><strong>UKTR</strong> - UK Tax Return</td>
+<td>A UK specific return for reporting the self-assessment of MTT and DTT liabilities.</td>
+</tr>
+<tr>
+<td><strong>UPE</strong> - Ultimate Parent Entity</td>
+<td>An entity that does not have another entity with a controlling interest in it.  Can be part of an MNE or a single UK entity. The UPE will be the filing member unless it has nominated another filing member.</td>
+</tr>
+<tr>
+<td><strong>UTPR</strong> - Undertaxed Profits Rule</td>
+<td>One of the Pillar 2 charging mechanisms. A top-up tax charged where the MNE’s structure means that profits cannot be taxed by the IIR rule.</td>
+</tr>
+<tr>
+<td><strong>UTR</strong> - Unique Taxpayer Reference</td>
+<td>The UTR for corporation tax can be used as a unique identifier for an entity in an API request.</td>
+</tr>
+</tbody>
+</table>
 
 ## Agent services
 
@@ -47,11 +117,16 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 To use the API, information is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
 
 - The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
+![Flow Diagram Showing How to Submit UKTR and BTN](SubmitUKTR_090125.svg "Submit UK Tax Return Submit BTN")
+
 - The AmendUKTR request returns an HTTP 200 response if it completes successfully.
+![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
+
+You can find examples for each different request variant (and their responses) in the "Endpoints" section of the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). 
 
 
 
-## Submit UK Tax Return
+## Submit UK tax return
 
 Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
 
@@ -62,7 +137,7 @@ The request structure has four variants created from two dependencies.
   <li>Is the return a nil return?</li>
 </ol> 
 
-The table here contains some information on the differences between the request variants.
+The table here contains some information on the differences between the request variants. Liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax. 
 
 <table>
 <thead>
@@ -74,15 +149,15 @@ The table here contains some information on the differences between the request 
 <tbody>
 <tr>
 <td>Nil Return (MNE/UK)</td>
-<td>Liable for MTT, the <em>obligationMTT</em> field is set to true.</td>
+<td>The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
-<td>Liable for DTT, the <em>obligationMTT</em> field is set to false.</td>
+<td>The <em>obligationMTT</em> field is set to false.</td>
 </tr>
 <tr>
 <td>Liability return (MNE/UK)</td>
-<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field is set to true.</td>
+<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Liability return (UK Only)</td>
@@ -117,26 +192,24 @@ If the request is successful, it returns a response containing several pieces of
 </tbody>
 </table>
 
-You can find examples for each different request variant (and their responses) in the "Endpoints" page of the API reference guide. 
 
-![Flow Diagram Showing How to Submit UKTR](SubmitUKTR_090125.svg "Submit UK Tax Return")
 
-## Amend UK Tax Return
+## Amend UK tax return
 
 If a submitted UKTR needs to be updated, an amendment can be sent via the API. 
 
-The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 44 error is returned. You can find a full explanation in the "Errors" section of the API reference guide.
+The AmendUKTR request has the same structure and data fields as SubmitUKTR. If you attempt to amend a return which has not been submitted, a code 044 error is returned. You can find more information on code 044 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+
+Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
 For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period. Multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
-If the amend request is successful, it returns a response containing a processing date and a charge reference if the liability has changed. 
-
-![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
+If the amend request is successful, it returns a response containing a processing date and a charge reference (unless the amendment changes a liability return to a Nil Return, where no charge reference is issued).
 
 
-## Submit Below-Threshold Notification
+## Submit below-threshold notification
 
 If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods. 
 
@@ -146,7 +219,7 @@ A SubmitBTN request requires you to send the accounting period start and end dat
 
 ## Testing requirements
 
-You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.tax.service.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.tax.service.gov.uk/api-documentation/docs/using-the-hub). The API landing page contains specific information for testing the Pillar 2 API. 
+You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub). The [Pillar 2 API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
 
 
 ## Software requirements
@@ -155,7 +228,7 @@ Any software solutions which integrate with the Pillar 2 API should comply with 
 
 ### Compatible software
 
-“Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet the minimum functionality standards, which are defined here. 
+“Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet these minimum functionality standards. 
 
 - Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN.
@@ -177,8 +250,6 @@ HMRC recognises customers or agents will use different pieces of software if an 
 
 Pillar 2 will offer support for organisations in checking eligibility and registering for the service, prepay taxes and later on file returns and be tax compliant in the UK and globally.
 
-API support is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message to be displayed.
+*API support* is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message will be displayed.
 
-Pillar 2 (Telephone) support is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
-
-## Changelog
+*Pillar 2 (Telephone) support* is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
