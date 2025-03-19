@@ -149,7 +149,7 @@ The table here contains some information on the differences between the request 
 <tbody>
 <tr>
 <td>Nil Return (MNE/UK)</td>
-<td>The <em>obligationMTT</em> field cannot be set to true for a domestic only group.</td>
+<td>The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
