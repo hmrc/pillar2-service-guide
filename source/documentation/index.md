@@ -157,7 +157,7 @@ The table here contains some information on the differences between the request 
 </tr>
 <tr>
 <td>Liability return (MNE/UK)</td>
-<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field is set to true.</td>
+<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Liability return (UK Only)</td>
