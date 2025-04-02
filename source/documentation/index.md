@@ -19,7 +19,7 @@ The API provides MNEs (and their agents) with the capability to
 - submit a UK tax return (**UKTR**)
 - amend a submitted UKTR
 - submit a Below-Threshold Notification (**BTN**)
-- return submission and obligation details for a specified accounting period
+- return obligation and submission details for a specified accounting period
 
 
 ## Getting started
@@ -130,6 +130,7 @@ Any software solutions which integrate with the Pillar 2 API should comply with 
 - Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN.
 - Make amendments to a submitted tax return (if required).
+- Retrieve obligation and submission details for a specified accounting period.  
 - Create and maintain all digital records (or digitally link to a product that can do so) that a customer is required to keep by law in digital form. End users should own 
 and have access to all their records created and be able to export these records, if necessary.
 - Allow customers to view their outstanding tax liabilities by either signposting them to their HMRC account or by displaying it in software.
