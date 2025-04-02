@@ -3,21 +3,24 @@ title: Below-Threshold Notification | Pillar 2 Service Guide
 weight: 5
 ---
 
-# Below-Threshold Notification
+# Below-threshold notification
 
 ## Overview
-If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods. 
+
+If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a Below-Threshold Notification (**BTN**) removes the obligation to submit a UKTR for both current (and future) accounting periods. 
 
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
-A SubmitBTN request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
+A *SubmitBTN* request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
 
 ## Testing
-Testing a Below-Threshold Notification requires a test organisation. Once setup, we can submit a Below-Threshold Notification for a specific accounting period.
+
+Before using the sandbox, please read through the "Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+A BTN is submitted for a specific accounting period.
 
 <a href="figures/btn-test-sequence.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
-As before, we can check the Obligations and Submissions endpoint to see what is required for our organisation:
+Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
 
 ```shell
 curl --request GET \
@@ -61,8 +64,7 @@ curl --request GET \
 }
 ```
 
-As per the definition, the Below-Threshold Notification declares that our organisation has dropped below the threshold that brings them into the scope of Pillar 2. Therefore, it can be submitted at any time regardless of what has already been submitted. 
-In this example, a UK Tax Return as already been submitted, but a Below-Threshold Notification will still be accepted and will supersede the previous UK Tax Return
+Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of the data previously submitted. For a successful BTN submission, the submitted accounting period must match the previously defined accounting period.
 
 ```shell
 curl --request POST \
@@ -75,9 +77,9 @@ curl --request POST \
     "accountingPeriodTo": "2024-12-31",
   }'
 ```
-The only required information for a successful Below-Threshold Notification is accounting period, which must match the previously defined accounting period.
 
-If we fetch the obligations and submissions for this organisation, we will see that the Below-Threshold Notification has satisfied all obligations **for that accounting period**. 
+
+A new request using the *Retrieve Obligations and Submissions* endpoint shows that the BTN has satisfied all obligations for the specified accounting period. 
 
 ```shell
 curl --request GET \
