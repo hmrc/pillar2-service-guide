@@ -73,19 +73,16 @@ If the request is successful, it returns a response containing several pieces of
 
 
 ## Testing
-Before using sandbox stubs, you will need to [create a Test User](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0) and create a Test Organisation.
 
-Once the organisation is created, it is generally recommended to interact with the sandbox stubs on a scenario basis, deleting the organisation once the test scenario is completed.
-
-If you do not delete the test organisation, it will be deleted within 28 days.
-
+Before using the sandbox, please read through the "Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
 
 ### Scenario 1: Submit UK Tax Return
-<a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;" /></a>
 
-The first, simple solution is to submit a UK Tax Return that satisfies the Pillar2TaxReturn obligation.
+This scenario demonstrates submitting a UK Tax Return that satisfies the "Pillar2TaxReturn" *obligationType*.
 
-First, we can check the obligations for this organisation:
+<a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;"/></a>
+
+Once the tax return is submitted, a GET request can be sent using the *Retrieve Obligations and Submissions* endpoint to check the obligations defined for this organisation.
 
 ```shell
 curl --request GET \
@@ -94,7 +91,7 @@ curl --request GET \
   --header 'authorization: Bearer {{bearer_token}}' 
 ```
 
-This will return the obligations for all accountingPeriods that occur during the requested date range:
+The response will return obligations for all accounting periods that fall within the requested date range. This example shows two obligations which are open and due for the accounting period specified in the request.
 
 ```json
 {
@@ -126,7 +123,7 @@ This will return the obligations for all accountingPeriods that occur during the
 }
 ```
 
-From this response, we can see that for our accounting period, we have two obligations which are open and due. We can satisfy one of these obligations by submitting a UK Tax Return.
+The *obligationType* "Pillar2TaxReturn" can be fulfilled by submitting a UK Tax Return.
 
 ```shell
 curl --request POST \
@@ -162,7 +159,17 @@ curl --request POST \
 }'
 ```
 
-and then a subsequent call to the Submissions and Obligations endpoint will show us this submission and the fulfilled obligation.
+If the *SubmitUKTR* request is successful, it will generate the following response. 
+
+```json
+{
+  "processingDate": "2025-01-01T09:26:17Z",
+  "formBundleNumber": "xxxxxx",
+  "chargeReference": "xxxx"
+}
+```
+
+Sending a new request using the *Retrieve Obligations and Submissions* endpoint will display the successful submission and the fulfilled obligation.
 
 ```json
 {
@@ -199,18 +206,9 @@ and then a subsequent call to the Submissions and Obligations endpoint will show
 }
 ```
 
-This will result in a successful response:
-```json
-{
-  "processingDate": "2025-01-01T09:26:17Z",
-  "formBundleNumber": "xxxxxx",
-  "chargeReference": "xxxx"
-}
-```
-
-
 #### Nil Return
-A Nil Return is a type of UK Tax Return that declares that an organisation must submit a UK Tax Return to satisfy an obligation but does not have a liability to declare. A Nil Return is submitted through the same POST endpoint but has a different structure
+
+If an organisation is required to submit a UK Tax Return (to fulfill an obligation) but does not have any liabilities to declare, they will have to submit a "Nil Return". A nil return is also submitted through the *SubmitUKTR* endpoint, but has a different structure. 
 
 ```shell
 curl --request POST \
@@ -229,7 +227,7 @@ curl --request POST \
 }'
 ```
 
-The response to a Nil Return will include a formBundleNumber but **will not include a chargeReference** as there is no charge in relation to a Nil Return
+A successful response will not include a *chargeReference* as there is no charge in relation to a nil return.
 
 ```json
 {
@@ -240,11 +238,13 @@ The response to a Nil Return will include a formBundleNumber but **will not incl
 
 
 #### Duplicate Submissions
+
+Once a UK Tax Return has been submitted, it cannot be submitted again for the same accounting period. The *AmendUKTR* endpoint must be used for any amendments.
+
 <a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
 
-Once a UK Tax Return has been submitted, it cannot be submitted again for the same accounting period. The Amend UK Tax Return must be used for any amendments.
 
-If a duplicate submission is received, a [422 client error response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422) will be returned with a specific error code
+If a duplicate submission is received, a 422 client error response with code "044" will be returned.
 
 ```json
 {
