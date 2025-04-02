@@ -6,7 +6,7 @@ weight: 2
 # Set up
 
 ## Stateful Sandbox
-To help with API testing, a "stateful sandbox" environment has been created to mirror the production environment. The tester should start by creating a test organisation, and use it for the duration of the testing. The test organisation should be deleted once a test scenario is completed.
+To help with API testing, a "stateful sandbox" environment has been created to mirror the production environment. The consumer should start by creating a test organisation, and use it for the duration of the testing. The test organisation should be deleted once a test scenario is completed. If the consumer does not delete the test organisation, it will be deleted within 28 days.
 
 ## Test Organisation
 [![](https://mermaid.ink/img/pako:eNp1kj9PwzAQxb-K5ZVGAcYMlRAsDIhKKQvKcrWvjYVjG_sshKp-d-w4rdI_ZHLOv3vvXnJ7LqxE3vDOBPyOaAS-KNh5GDrD0gOCrGdCKzRUKg48KaEcGGIQqS_VQlTL5V2uNWz13q5ZbYH6muwXmkkt3WWm0A0D57QSQMoatkHw6NmMFh6B8MwwMgiMMKRTSPDT6vXSPh69S3eV4SrDtfU7MCqMbqG0xfkw6yz7kWUlEigdbid7LlON4PXMlwn_wW5EaylurizH4ulrzgPUTmkNvqIfWwek6M6ui87YPZ_m8f5hspad4Qs-oB9AyfT797mj49TjgB1v0lHiFqKmLm3GIaEpmG1_jeAN-YgL7m3c9bzZgg7pLTqZRKfNOSIp1qe1wwlCqdIyvZV9G9fu8Ae4bNq3?type=png)](https://mermaid.live/edit#pako:eNp1kj9PwzAQxb-K5ZVGAcYMlRAsDIhKKQvKcrWvjYVjG_sshKp-d-w4rdI_ZHLOv3vvXnJ7LqxE3vDOBPyOaAS-KNh5GDrD0gOCrGdCKzRUKg48KaEcGGIQqS_VQlTL5V2uNWz13q5ZbYH6muwXmkkt3WWm0A0D57QSQMoatkHw6NmMFh6B8MwwMgiMMKRTSPDT6vXSPh69S3eV4SrDtfU7MCqMbqG0xfkw6yz7kWUlEigdbid7LlON4PXMlwn_wW5EaylurizH4ulrzgPUTmkNvqIfWwek6M6ui87YPZ_m8f5hspad4Qs-oB9AyfT797mj49TjgB1v0lHiFqKmLm3GIaEpmG1_jeAN-YgL7m3c9bzZgg7pLTqZRKfNOSIp1qe1wwlCqdIyvZV9G9fu8Ae4bNq3)
