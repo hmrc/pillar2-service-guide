@@ -19,6 +19,7 @@ The API provides MNEs (and their agents) with the capability to
 - submit a UK tax return (**UKTR**)
 - amend a submitted UKTR
 - submit a Below-Threshold Notification (**BTN**)
+- return submission and obligation details for a specified accounting period
 
 
 ## Getting started
@@ -109,22 +110,9 @@ A glossary of terms has been created to help you navigate the information in the
 
 Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPR**) or Nominated Filing Member (**NFM**). 
 
-Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones. 
+Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones. The authorisation process is set out in the flow chart. 
 
-
-## API requests
-
-To use the API, information is submitted in an API request, which is then validated and processed by HMRC. A response is sent if processing is successful and an error is sent if processing fails. 
-
-- The SubmitUKTR and SubmitBTN requests return an HTTP 201 response if they complete successfully.
-![Flow Diagram Showing How to Submit UKTR and BTN](SubmitUKTR_090125.svg "Submit UK Tax Return Submit BTN")
-
-- The AmendUKTR request returns an HTTP 200 response if it completes successfully.
-![Flow Diagram Showing How to Amend UKTR](AmendUKTR_090125.svg "Amend UK Tax Return")
-
-You can find examples for each different request variant (and their responses) in the "Endpoints" section of the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). 
-
-
+<a href="figures/Pillar2_agent_services_v2.svg" target="blank"><img src="figures/Pillar2_agent_services_v2.svg" alt="Agent Services Authorisation" style="width:520px;"/></a>
 
 ## Testing requirements
 
