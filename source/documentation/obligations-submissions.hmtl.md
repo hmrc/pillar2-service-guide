@@ -28,7 +28,7 @@ curl --request GET \
   --header 'content-type: application/json'
 ```
 
-The response will return obligations for all accounting periods that fall within the requested date range. This example shows one fulfilled *Pillar2TaxReturn* obligation for the accounting period specified in the request.
+The response will return obligations for all accounting periods that fall within the requested date range. This example shows one fulfilled "Pillar2TaxReturn" *obligationType* for the accounting period specified in the request.
 
 ```json
 {
