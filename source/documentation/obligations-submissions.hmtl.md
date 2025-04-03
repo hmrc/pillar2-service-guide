@@ -16,5 +16,45 @@ Obligations are instructions defined by HMRC for each entity. The first obligati
 
 Before using the sandbox, please read through the "Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
 
-A *Return Obligations and Submissions* endpoint API request returns information on the submission type, submission date, and the status of the obligation (open or fulfilled). The accounting period is defined by the startDate and endDate parameters. Each obligation is returned as an obligationType with a submissionType nested inside. 
+<a href="figures/obligations-and-submissions.svg" target="blank"><img src="figures/obligations-and-submissions.svg" alt="Sequence diagram showing REST calls for returning obligations and submisssions" style="width:520px;" /></a>
 
+An *Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
+
+curl --request GET \
+  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --header 'accept: application/vnd.hmrc.1.0+json' \
+  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'content-type: application/json'
+
+The response will return obligations for all accounting periods that fall within the requested date range. This example shows one open obligation due for the accounting period specified in the request.
+
+{
+  "processingDate": "2025-04-03T10:42:14Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2026-03-31",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "Pillar2TaxReturn",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": [
+            {
+              "submissionType": "UKTR",
+              "receivedDate": "2025-04-03T10:42:09Z"
+            }
+          ]
+        },
+        {
+          "obligationType": "GlobeInformationReturn",
+          "status": "Open",
+          "canAmend": true,
+          "submissions": []
+        }
+      ]
+    }
+  ]
+}
