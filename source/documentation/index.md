@@ -112,7 +112,7 @@ Once registration is completed by the MNE, they can choose to engage an agent or
 
 Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones. The authorisation process is set out in the flow chart. 
 
-<a href="figures/pillar2-agent-services-v2.svg" target="blank"><img src="figures/pillar2-agent-services-v2.svg" alt="Agent Services Authorisation"/></a>
+<a href="figures/pillar2-agent-services.svg" target="blank"><img src="figures/pillar2-agent-services.svg" alt="Agent Services Authorisation"/></a>
 
 ## Testing requirements
 
