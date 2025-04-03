@@ -6,7 +6,7 @@ weight: 4
 # Amend UK tax return
 
 ## Overview
-If a submitted UK tax return needs to be updated, an amendment can be sent via the API. 
+If a submitted UK tax return **(UKTR)** needs to be updated, an amendment can be sent via the API. 
 
 The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. Attempting to amend a return which has not been submitted will return a 422 client error response with code "044". You can find more information on code 044 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
@@ -25,7 +25,7 @@ Before using the sandbox, please read through the "API Testing Setup" page of th
 
 <a href="figures/amenduktr-test-sequence.svg" target="blank"><img src="figures/amenduktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing amend UK Tax Return" style="width:520px;" /></a>
 
-Once a UK tax return has been submitted, it can be amended any number of times before the end of the amendment window. The status of the tax return can be checked by sending a GET request using the *Obligations and Submissions* endpoint. 
+Once a UKTR has been submitted, it can be amended any number of times before the end of the amendment window. The status of the tax return can be checked by sending a GET request using the *Obligations and Submissions* endpoint. 
 
 ```shell
 curl --request GET \
@@ -33,7 +33,7 @@ curl --request GET \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' 
 ```
-The response shows that a UK tax return has been submitted and the amendment window is still open as the *canAmend* flag is set to "true". This means any amendment submitted should return a successful response.  
+The response shows that a UKTR has been submitted and the amendment window is still open as the *canAmend* flag is set to "true". This means any amendment submitted should return a successful response.  
 
 ```json
 {
@@ -70,7 +70,7 @@ The response shows that a UK tax return has been submitted and the amendment win
 }
 ```
 
-When sending an *AmendUKTR* request, the full return must be submitted (but with amended fields). This API will not calculate deltas; it will supersede the previous UK tax return with the new payload. This behaviour will be unchanged regardless of how many amendments are submitted.
+When sending an *AmendUKTR* request, the full return must be submitted (but with amended fields). This API will not calculate deltas; it will supersede the previous UKTR with the new payload. This behaviour will be unchanged regardless of how many amendments are submitted.
 
 ```shell
 curl --request PUT \
