@@ -7,7 +7,7 @@ weight: 3
 
 ## Overview
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UKTR for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UK Tax Return **(UKTR)** for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
 
 The request structure has four variants created from two dependencies.
 
@@ -74,15 +74,15 @@ If the request is successful, it returns a response containing several pieces of
 
 ## Testing
 
-Before using the sandbox, please read through the "Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
 
 ### Scenario 1: Submit UK Tax Return
 
-This scenario demonstrates submitting a UK Tax Return that satisfies the "Pillar2TaxReturn" *obligationType*.
+This scenario demonstrates submitting a UKTR that satisfies the "Pillar2TaxReturn" *obligationType*.
 
 <a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;"/></a>
 
-Once the tax return is submitted, a GET request can be sent using the *Retrieve Obligations and Submissions* endpoint to check the obligations defined for this organisation.
+Once the tax return is submitted, a GET request can be sent using the *Obligations and Submissions* endpoint to check the obligations defined for this organisation.
 
 ```shell
 curl --request GET \
@@ -169,7 +169,7 @@ If the *SubmitUKTR* request is successful, it will generate the following respon
 }
 ```
 
-Sending a new request using the *Retrieve Obligations and Submissions* endpoint will display the successful submission and the fulfilled obligation.
+Sending a new request using the *Obligations and Submissions* endpoint will display the successful submission and the fulfilled obligation.
 
 ```json
 {
@@ -208,7 +208,7 @@ Sending a new request using the *Retrieve Obligations and Submissions* endpoint 
 
 #### Nil Return
 
-If an organisation is required to submit a UK Tax Return (to fulfill an obligation) but does not have any liabilities to declare, they will have to submit a "Nil Return". A nil return is also submitted through the *SubmitUKTR* endpoint, but has a different structure. 
+If an organisation is required to submit a UKTR (to fulfill an obligation) but does not have any liabilities to declare, they will have to submit a "Nil Return". A nil return is also submitted through the *SubmitUKTR* endpoint, but has a different structure. 
 
 ```shell
 curl --request POST \
@@ -239,7 +239,7 @@ A successful response will not include a *chargeReference* as there is no charge
 
 #### Duplicate Submissions
 
-Once a UK Tax Return has been submitted, it cannot be submitted again for the same accounting period. The *AmendUKTR* endpoint must be used for any amendments.
+Once a UKTR has been submitted, it cannot be submitted again for the same accounting period. The *AmendUKTR* endpoint must be used for any amendments.
 
 <a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
 
