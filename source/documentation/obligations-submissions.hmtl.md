@@ -7,7 +7,7 @@ weight: 6
 
 ## Overview
 
-Pillar 2 information can be organised into *obligations* and *submissions* for each accounting period. There are currently two submission types which can be retrieved using the API (UKTR, BTN) with another two planned (ORN, GIR). The request has an HTTP GET code, which means it is only ever used to retrieve information. The *Obligations and Submissions* endpoint is also a means of retrieving an entity’s obligations, the submissions required to meet these obligations and the due date for each obligation.
+Pillar 2 information can be organised into *obligations* and *submissions* for each accounting period. There are currently two submission types which can be retrieved using the API (UKTR, BTN) with another two planned (ORN, GIR). The *Obligations and Submissions* endpoint has an HTTP GET code, so it is only ever used to retrieve information on an entity’s obligations, the submissions required to meet these obligations and the due date for each obligation.
 
 Obligations are instructions defined by HMRC for each entity. The first obligation relates to submitting a UKTR or BTN. The entity uses the API request to send information (a submission) to HMRC. Multiple submissions can be sent to fulfill an obligation within an accounting period, where a UKTR (or BTN) can be submitted. 
 
