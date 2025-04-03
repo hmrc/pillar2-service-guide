@@ -20,14 +20,17 @@ Before using the sandbox, please read through the "Setup" page of the service gu
 
 An *Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
 
+```shell
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' \
   --header 'content-type: application/json'
+```
 
-The response will return obligations for all accounting periods that fall within the requested date range. This example shows one open obligation due for the accounting period specified in the request.
+The response will return obligations for all accounting periods that fall within the requested date range. This example shows one fulfilled *Pillar2TaxReturn* obligation for the accounting period specified in the request.
 
+```json
 {
   "processingDate": "2025-04-03T10:42:14Z",
   "accountingPeriodDetails": [
@@ -58,3 +61,4 @@ The response will return obligations for all accounting periods that fall within
     }
   ]
 }
+```
