@@ -116,7 +116,7 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 ## Testing requirements
 
-You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub). The [Pillar 2 API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
+You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub). The [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
 
 
 ## Software requirements
