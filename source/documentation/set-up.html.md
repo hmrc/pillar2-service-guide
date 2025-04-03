@@ -18,7 +18,7 @@ The test organisation facilitates the storage of submissions against a specific 
 
 The cURL examples shown here will create a test organisation that is *domesticOnly* and has a specific accounting period.
 
-The *domesticOnly* flag is used to create a MNE or UK-only organisation. This will be important when testing the *SubmitUKTR* endpoint and conditional flags which depend on this value.
+The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *SubmitUKTR* endpoint and conditional flags which depend on this value.
 
 
 ```shell
