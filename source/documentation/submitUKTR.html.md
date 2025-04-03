@@ -244,7 +244,7 @@ Once a UK Tax Return has been submitted, it cannot be submitted again for the sa
 <a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
 
 
-If a duplicate submission is received, a 422 client error response with code "044" will be returned.
+If a duplicate submission is received, a [422 client error response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422) with code "044" will be returned.
 
 ```json
 {
