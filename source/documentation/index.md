@@ -108,7 +108,7 @@ A glossary of terms has been created to help you navigate the information in the
 
 ## Agent services
 
-Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPR**) or Nominated Filing Member (**NFM**). 
+Once registration is completed by the MNE, they can choose to engage an agent or continue with an Ultimate Parent Entity (**UPE**) or Nominated Filing Member (**NFM**). 
 
 Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hmrc-to-use-an-agent-services-account) by post before they can [create an agent services account](https://www.gov.uk/guidance/get-an-hmrc-agent-services-account). The agent can then use their [agent services account](https://www.gov.uk/guidance/sign-in-to-your-agent-services-account) to seek authorisation from new clients and copy across existing ones. The authorisation process is set out in the flow chart. 
 
