@@ -16,9 +16,9 @@ The tester should start by creating a [test user](https://developer.service.hmrc
 
 The test organisation facilitates the storage of submissions against a specific accounting period. This data is then used to fulfill any GET requests made on the API by the *Obligations and Submissions* endpoint.
 
-The cURL examples shown here will create a test organisation that is *domesticOnly* and has a specific accounting period.
+The cURL examples shown here will create a UK-only test organisation (where *domesticOnly* is set to true) for a specific accounting period.
 
-The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *SubmitUKTR* endpoint and conditional flags which depend on this value.
+The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *SubmitUKTR* endpoint and the conditional flags which depend on this value.
 
 
 ```shell
