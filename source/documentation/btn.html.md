@@ -15,12 +15,13 @@ A *SubmitBTN* request requires you to send the accounting period start and end d
 
 ## Testing
 
-Before using the sandbox, please read through the "Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+
 A BTN is submitted for a specific accounting period.
 
-<a href="figures/btn-test-sequence.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
+<a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/below-threshold-notification.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
-Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
+Requirements for the organisation can be checked by sending a GET request using the *Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
 
 ```shell
 curl --request GET \
@@ -64,7 +65,7 @@ curl --request GET \
 }
 ```
 
-Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of the data previously submitted. For a successful BTN submission, the submitted accounting period must match the previously defined accounting period.
+Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of the data previously sent. For a successful BTN response, the submitted accounting period must match the previously defined accounting period.
 
 ```shell
 curl --request POST \
@@ -79,7 +80,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Retrieve Obligations and Submissions* endpoint shows that the BTN has satisfied all obligations for the specified accounting period. 
+A new request using the *Obligations and Submissions* endpoint shows that the BTN has satisfied all obligations for the specified accounting period. 
 
 ```shell
 curl --request GET \
