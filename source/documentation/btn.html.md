@@ -80,7 +80,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Obligations and Submissions* endpoint shows that the BTN has satisfied all obligations for the specified accounting period. 
+A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the Pillar2TaxReturn obligation and has marked this obligation as "Fulfilled". Since a BTN indicates the entity is below the revenue threshold, the GlobeInformationReturn obligation is no longer required for this accounting period.
 
 ```shell
 curl --request GET \
@@ -109,17 +109,6 @@ curl --request GET \
                 "submissionType": "UKTR",
                 "receivedDate": "2025-03-17T09:26:17Z"
               },
-              {
-                "submissionType": "BTN",
-                "receivedDate": "2025-03-22T09:30:12Z"
-              }
-            ]
-          },
-          {
-            "obligationType": "GlobeInformationReturn",
-            "status": "FulFilled",
-            "canAmend": true,
-            "submissions": [
               {
                 "submissionType": "BTN",
                 "receivedDate": "2025-03-22T09:30:12Z"

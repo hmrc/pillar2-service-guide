@@ -88,7 +88,7 @@ Once the tax return is submitted, a GET request can be sent using the *Obligatio
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}'
+  --header 'authorization: Bearer {{bearer_token}}' 
 ```
 
 The response will return obligations for all accounting periods that fall within the requested date range. This example shows two obligations which are open and due for the accounting period specified in the request.
@@ -164,8 +164,8 @@ If the *SubmitUKTR* request is successful, it will generate the following respon
 ```json
 {
   "processingDate": "2025-01-01T09:26:17Z",
-  "formBundleNumber": "xxxxxx",
-  "chargeReference": "xxxx"
+  "formBundleNumber": "119000004320",
+  "chargeReference": "XTC01234123412"
 }
 ```
 
@@ -232,7 +232,7 @@ A successful response will not include a *chargeReference* as there is no charge
 ```json
 {
   "processingDate": "2025-01-01T09:26:17Z",
-  "formBundleNumber": "xxxxxx",
+  "formBundleNumber": "119000004320",
 }
 ```
 

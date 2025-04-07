@@ -111,8 +111,8 @@ This request (to amend the *amountOwedDTT*) should generate a successful respons
 ```json
 {
   "processingDate": "2025-01-01T09:26:17Z",
-  "formBundleNumber": "xxxxxx",
-  "chargeReference": "xxxx"
+  "formBundleNumber": "950613832622",
+  "chargeReference": "XTC01234123412"
 }
 ```
 
