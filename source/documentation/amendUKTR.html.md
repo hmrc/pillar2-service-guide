@@ -31,7 +31,8 @@ Once a UKTR has been submitted, it can be amended any number of times before the
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' 
+  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'x-pillar2-id: {{pillar2Id}}'
 ```
 The response shows that a UKTR has been submitted and the amendment window is still open as the *canAmend* flag is set to "true". This means any amendment submitted should return a successful response.  
 
@@ -76,7 +77,8 @@ When sending an *AmendUKTR* request, the full return must be submitted (but with
 curl --request PUT \
   --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'authorization: Bearer {{bearer_token}}' \ \
+  --header 'x-pillar2-id: {{pillar2Id}}' \
   --header 'content-type: application/json' \
   --data '{
   "accountingPeriodFrom": "2024-01-01",

@@ -27,6 +27,7 @@ curl --request POST \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' \
   --header 'content-type: application/json' \
+  --header 'x-pillar2-id: {{pillar2Id}} \
   --data '{
   "orgDetails": {
     "domesticOnly": true,
