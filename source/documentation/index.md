@@ -30,7 +30,7 @@ In preparation, HMRC contacted MNEs and agents identified as being subject to Pi
 
 The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
 
-A unique Pillar 2 ID generated when an MNE registers and subscribes to the service. Any information submitted via the API **must** include the Pillar 2 ID in the request header. 
+A unique Pillar 2 is ID generated when an MNE registers and subscribes to the service. Any information submitted via the API **must** include the Pillar 2 ID in the request header. 
 
 
 
