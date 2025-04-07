@@ -16,7 +16,7 @@ Obligations are instructions defined by HMRC for each entity. The first obligati
 
 Before using the sandbox, please read through the "Test API Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
 
-<a href="figures/obligations-and-submissions.svg" target="blank"><img src="figures/obligations-and-submissions.svg" alt="Sequence diagram showing REST calls for returning obligations and submisssions" style="width:520px;" /></a>
+<a href="figures/obligations-and-submissions.svg" target="blank"><img src="figures/obligations-submissions-sequence.svg" alt="Sequence diagram showing REST calls for returning obligations and submisssions" style="width:520px;" /></a>
 
 An *Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
 
