@@ -19,7 +19,7 @@ Before using the sandbox, please read through the "API Testing Setup" page of th
 
 A BTN is submitted for a specific accounting period.
 
-<a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/below-threshold-notification.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
+<a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
 Requirements for the organisation can be checked by sending a GET request using the *Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
 
