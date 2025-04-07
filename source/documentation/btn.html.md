@@ -80,7 +80,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the Pillar2TaxReturn obligation and has marked this obligation as "Fulfilled". Since a BTN indicates the entity is below the revenue threshold, the GlobeInformationReturn obligation is no longer required for this accounting period.
+A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "Pillar2TaxReturn" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GlobeInformationReturn" *obligationType* is no longer required for this accounting period and is not returned in the response. 
 
 ```shell
 curl --request GET \
