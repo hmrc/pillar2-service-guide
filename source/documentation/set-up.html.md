@@ -12,7 +12,7 @@ The tester should start by creating a [test user](https://developer.service.hmrc
 
 ## Test Organisation
 
-<a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation.svg" alt="Agent Services Authorisation"/></a>
+<a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation.svg" alt="Create test organisation"/></a>
 
 The test organisation facilitates the storage of submissions against a specific accounting period. This data is then used to fulfill any GET requests made on the API by the *Obligations and Submissions* endpoint.
 
