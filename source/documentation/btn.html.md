@@ -80,11 +80,11 @@ curl --request POST \
 ```
 
 
-A new request using the *Obligations and Submissions* endpoint shows that the BTN has satisfied all obligations for the specified accounting period. 
+A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "Pillar2TaxReturn" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GlobeInformationReturn" *obligationType* is no longer required for this accounting period and is not returned in the response. 
 
 ```shell
 curl --request GET \
-  --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/submissionandobligation?fromDate=2024-01-01&toDate=2024-12-31 \
+  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' 
 ```
@@ -109,17 +109,6 @@ curl --request GET \
                 "submissionType": "UKTR",
                 "receivedDate": "2025-03-17T09:26:17Z"
               },
-              {
-                "submissionType": "BTN",
-                "receivedDate": "2025-03-22T09:30:12Z"
-              }
-            ]
-          },
-          {
-            "obligationType": "GlobeInformationReturn",
-            "status": "FulFilled",
-            "canAmend": true,
-            "submissions": [
               {
                 "submissionType": "BTN",
                 "receivedDate": "2025-03-22T09:30:12Z"
