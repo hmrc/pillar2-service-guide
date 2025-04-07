@@ -88,7 +88,8 @@ Once the tax return is submitted, a GET request can be sent using the *Obligatio
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' 
+  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'x-pillar2-id: {{pillar2Id}}'
 ```
 
 The response will return obligations for all accounting periods that fall within the requested date range. This example shows two obligations which are open and due for the accounting period specified in the request.

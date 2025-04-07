@@ -27,7 +27,8 @@ Requirements for the organisation can be checked by sending a GET request using 
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' 
+  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'x-pillar2-id: {{pillar2Id}}'
 ```
 
 ```json
@@ -73,6 +74,7 @@ curl --request POST \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' \
   --header 'content-type: application/json' \
+  --header 'x-pillar2-id: {{pillar2Id}}'
   --data '{
     "accountingPeriodFrom": "2024-01-01",
     "accountingPeriodTo": "2024-12-31",
@@ -86,7 +88,8 @@ A new request using the *Obligations and Submissions* endpoint shows that the BT
 curl --request GET \
   --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' 
+  --header 'authorization: Bearer {{bearer_token}}' \
+  --header 'x-pillar2-id: {{pillar2Id}}'
 ```
 
 ```json
