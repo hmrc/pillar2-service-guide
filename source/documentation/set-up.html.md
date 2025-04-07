@@ -8,7 +8,9 @@ weight: 2
 ## Stateful Sandbox
 To help with API testing, a "stateful sandbox" environment has been created to mirror the production environment. 
 
-The tester should start by creating a [test user](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0) and a test organisation. The test organisation can be used for the duration of the testing, and it should be deleted once a test scenario is completed. If the tester does not delete the organisation, it will be deleted within 28 days.
+The tester should start by creating a [test user](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0). The test user response will return a username, password and a *Pillar 2 ID*. The Pillar 2 ID must be included in the header of each test request, or an error will be returned. 
+
+The next step is to create a test organisation using the *Create Test Organisation* endpoint on the API OAS page. The test organisation can be used for the duration of testing, and should be deleted once a test scenario is completed. If the tester does not delete the organisation, it will be deleted within 28 days. 
 
 ## Test Organisation
 
