@@ -24,11 +24,14 @@ The API provides MNEs (and their agents) with the capability to
 
 ## Getting started
 
-To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. Information submitted via the API must include a *Pillar 2 ID*, which is generated when an MNE registers and subscribes to the service. 
+To comply with Pillar 2, MNEs (and enterprise groups based in the UK) have an obligation to submit tax information to HMRC for every accounting period. 
 
 In preparation, HMRC contacted MNEs and agents identified as being subject to Pillar 2 regulations. The communication outlined the registration process and also confirmed the registration deadline. 
 
-**Important**: The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
+The MNE **must** complete registration and subscription themselves. An agent cannot register or subscribe on the MNE’s behalf. The [registration notice](https://www.gov.uk/government/publications/pillar-2-top-up-taxes-registration-notice-1) is available to download on the GOV.UK website.
+
+A unique Pillar 2 ID generated when an MNE registers and subscribes to the service. Any information submitted via the API **must** include the Pillar 2 ID in the request header. 
+
 
 
 ## Glossary
