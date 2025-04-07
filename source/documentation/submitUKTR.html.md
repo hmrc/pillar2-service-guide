@@ -241,7 +241,7 @@ A successful response will not include a *chargeReference* as there is no charge
 
 Once a UKTR has been submitted, it cannot be submitted again for the same accounting period. The *AmendUKTR* endpoint must be used for any amendments.
 
-<a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
+<a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions-sequence.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
 
 
 If a duplicate submission is received, a [422 client error response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422) with code "044" will be returned.
