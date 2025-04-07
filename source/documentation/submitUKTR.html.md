@@ -66,7 +66,7 @@ If the request is successful, it returns a response containing several pieces of
 </tr>
 <tr>
 <td>Charge reference</td>
-<td>Identifier for any liabilities specified in the return. Nil returns have no charge so don’t require a charge reference.</td>
+<td>Identifier for any liabilities specified in the return. Nil returns have no charge so do not require a charge reference.</td>
 </tr>
 </tbody>
 </table>

@@ -84,7 +84,7 @@ A new request using the *Obligations and Submissions* endpoint shows that the BT
 
 ```shell
 curl --request GET \
-  --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/submissionandobligation?fromDate=2024-01-01&toDate=2024-12-31 \
+  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'accept: application/vnd.hmrc.1.0+json' \
   --header 'authorization: Bearer {{bearer_token}}' 
 ```
