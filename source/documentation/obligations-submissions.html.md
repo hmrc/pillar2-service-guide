@@ -29,7 +29,7 @@ curl --request GET \
   --header 'x-pillar2-id: {{pillar2Id}}'
 ```
 
-The response will return obligations for all accounting periods that fall within the requested date range, with a maximum of ten *submissionType* items for each *obligationType*. This example shows one fulfilled "Pillar2TaxReturn" *obligationType* for the accounting period specified in the request, and an open "GlobeInformationReturn" *obligationtype*.
+The response will return a list of submissions for all accounting periods that fall within the requested date range, with a maximum of ten *submissionType* items for each *obligationType*. This example shows one fulfilled "Pillar2TaxReturn" *obligationType* for the accounting period specified in the request, and an open "GlobeInformationReturn" *obligationtype*.
 
 ```json
 {
