@@ -122,7 +122,7 @@ The response will return obligations for all accounting periods that fall within
 }
 ```
 
-The *obligationType* "Pillar2TaxReturn" can be fulfilled by submitting a UKTR.
+The *obligationType* "UKTR" can be fulfilled by submitting a UKTR.
 
 ```shell
 curl --request POST \
