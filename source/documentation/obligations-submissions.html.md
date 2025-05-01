@@ -23,37 +23,37 @@ An *Obligations and Submissions* GET request returns information on the *submiss
 
 ```shell
 curl --request GET \
-  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'x-pillar2-id: {{pillar2Id}}'
+  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
+  --header 'Accept: application/vnd.hmrc.1.0+json'
 ```
 
-The response will return a list of submissions for all accounting periods that fall within the requested date range, with a maximum of ten *submissionType* items for each *obligationType*. This example shows one fulfilled "Pillar2TaxReturn" *obligationType* for the accounting period specified in the request, and an open "GlobeInformationReturn" *obligationtype*.
+The response will return a list of submissions for all accounting periods that fall within the requested date range, with a maximum of ten *submissionType* items for each *obligationType*. This example shows one fulfilled "UKTR" *obligationType* for the accounting period specified in the request, and an open "GIR" *obligationtype*.
 
 ```json
 {
-  "processingDate": "2025-04-03T10:42:14Z",
+  "processingDate": "2025-03-17T09:26:17Z",
   "accountingPeriodDetails": [
     {
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "dueDate": "2026-03-31",
+      "dueDate": "2025-01-31",
       "underEnquiry": false,
       "obligations": [
         {
-          "obligationType": "Pillar2TaxReturn",
+          "obligationType": "UKTR",
           "status": "Fulfilled",
           "canAmend": true,
           "submissions": [
             {
-              "submissionType": "UKTR",
-              "receivedDate": "2025-04-03T10:42:09Z"
+              "submissionType": "UKTR_CREATE",
+              "receivedDate": "2025-03-17T09:26:17Z"
             }
           ]
         },
         {
-          "obligationType": "GlobeInformationReturn",
+          "obligationType": "GIR",
           "status": "Open",
           "canAmend": true,
           "submissions": []
