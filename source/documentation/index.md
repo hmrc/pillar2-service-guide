@@ -88,7 +88,11 @@ A glossary of terms has been created to help you navigate the information in the
 </tr>
 <tr>
 <td><strong>ORN</strong> - Overseas Return Notification</td>
-<td>A notice informing HMRC of the jurisdiction where the group’s GIR has been submitted. </td>
+<td>A notice informing HMRC of the jurisdiction where the group’s GIR has been submitted.</td>
+</tr>
+<tr>
+<td><strong>TIN</strong> - Tax Identification Number</td>
+<td>A unique number (or combination of letters and numbers) in a specified format issued by a jurisdiction for the purposes of identifying individuals and entities for tax purposes.</td>
 </tr>
 <tr>
 <td><strong>UKTR</strong> - UK Tax Return</td>
