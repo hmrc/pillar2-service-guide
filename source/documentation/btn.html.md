@@ -92,12 +92,12 @@ curl --request GET \
 
 ```json
 {
-  "processingDate": "2025-03-17T09:26:17Z",
+  "processingDate": "2025-05-02T07:28:08Z",
   "accountingPeriodDetails": [
     {
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "dueDate": "2025-01-31",
+      "dueDate": "2025-05-01",
       "underEnquiry": false,
       "obligations": [
         {
@@ -107,18 +107,7 @@ curl --request GET \
           "submissions": [
             {
               "submissionType": "BTN",
-              "receivedDate": "2025-03-17T09:26:17Z"
-            }
-          ]
-        },
-        {
-          "obligationType": "GIR",
-          "status": "Fulfilled",
-          "canAmend": false,
-          "submissions": [
-            {
-              "submissionType": "BTN",
-              "receivedDate": "2025-03-17T09:26:17Z"
+              "receivedDate": "2025-05-02T07:27:09Z"
             }
           ]
         }
@@ -126,6 +115,5 @@ curl --request GET \
     }
   ]
 }
-
 ```
 
