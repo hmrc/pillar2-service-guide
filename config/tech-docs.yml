@@ -50,6 +50,3 @@ show_contribution_banner: false
 
 # Fixes the rendering of the Favicon
 use_service_link_for_favicon: true
-
-# Fixes the rendering of the Favicon
-use_service_link_for_favicon: true
