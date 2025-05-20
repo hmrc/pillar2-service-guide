@@ -3,7 +3,7 @@ import sbt._
 
 object AppDependencies {
   lazy val bootStrapPlayVersion = "9.11.0"
-  lazy val pegdownVersion       = "1.6.0"
+  lazy val flexmarkAllVersion   = "0.64.8"
 
   lazy val compile: Seq[ModuleID] = Seq(
     ws,
@@ -11,7 +11,7 @@ object AppDependencies {
   )
 
   lazy val test: Seq[ModuleID] = Seq(
-    "uk.gov.hmrc" %% "bootstrap-test-play-30" % bootStrapPlayVersion,
-    "org.pegdown"  % "pegdown"                % pegdownVersion
+    "uk.gov.hmrc"         %% "bootstrap-test-play-30" % bootStrapPlayVersion,
+    "com.vladsch.flexmark" % "flexmark-all"           % flexmarkAllVersion
   ).map(_ % Test)
 }
