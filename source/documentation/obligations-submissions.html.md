@@ -23,7 +23,7 @@ An *Obligations and Submissions* GET request returns information on the *submiss
 
 ```shell
 curl --request GET \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --header 'Accept: application/vnd.hmrc.1.0+json'
