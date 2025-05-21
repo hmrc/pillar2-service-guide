@@ -78,7 +78,7 @@ Before using the sandbox, please read through the "API Testing Setup" page of th
 
 ### Scenario 1: Submit UK Tax Return
 
-This scenario demonstrates submitting a UKTR that satisfies the "Pillar2TaxReturn" *obligationType*.
+This scenario demonstrates submitting a UKTR that satisfies the "UKTR" *obligationType*.
 
 <a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;"/></a>
 
@@ -86,52 +86,51 @@ Once the tax return is submitted, a GET request can be sent using the *Obligatio
 
 ```shell
 curl --request GET \
-  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'x-pillar2-id: {{pillar2Id}}'
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
+  --header 'Accept: application/vnd.hmrc.1.0+json'
 ```
 
 The response will return obligations for all accounting periods that fall within the requested date range. This example shows two obligations which are open and due for the accounting period specified in the request.
 
 ```json
 {
-  "success": {
-    "processingDate": "2025-01-01T09:26:17Z",
-    "accountingPeriodDetails": [
-      {
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31",
-        "dueDate": "2025-01-31",
-        "underEnquiry": false,
-        "obligations": [
-          {
-            "obligationType": "Pillar2TaxReturn",
-            "status": "Open",
-            "canAmend": true,
-            "submissions": []
-          },
-          {
-            "obligationType": "GlobeInformationReturn",
-            "status": "Open",
-            "canAmend": true,
-            "submissions": []
-          }
-        ]
-      }
-    ]
-  }
+  "processingDate": "2025-03-17T09:26:17Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2025-01-31",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "UKTR",
+          "status": "Open",
+          "canAmend": false,
+          "submissions": []
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Open",
+          "canAmend": false,
+          "submissions": []
+        }
+      ]
+    }
+  ]
 }
 ```
 
-The *obligationType* "Pillar2TaxReturn" can be fulfilled by submitting a UKTR.
+The *obligationType* "UKTR" can be fulfilled by submitting a UKTR.
 
 ```shell
 curl --request POST \
-  --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'content-type: application/json' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return' \
+  --header 'Accept: application/vnd.hmrc.1.0+json' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --data '{
   "accountingPeriodFrom": "2024-01-01",
   "accountingPeriodTo": "2024-12-31",
@@ -164,7 +163,7 @@ If the *SubmitUKTR* request is successful, it will generate the following respon
 
 ```json
 {
-  "processingDate": "2025-01-01T09:26:17Z",
+  "processingDate": "2025-03-17T09:26:17Z",
   "formBundleNumber": "119000004320",
   "chargeReference": "XTC01234123412"
 }
@@ -174,36 +173,34 @@ Sending a new request using the *Obligations and Submissions* endpoint will disp
 
 ```json
 {
-  "success": {
-    "processingDate": "2025-03-17T09:26:17Z",
-    "accountingPeriodDetails": [
-      {
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31",
-        "dueDate": "2025-01-31",
-        "underEnquiry": false,
-        "obligations": [
-          {
-            "obligationType": "Pillar2TaxReturn",
-            "status": "Fulfilled",
-            "canAmend": true,
-            "submissions": [
-              {
-                "submissionType": "UKTR",
-                "receivedDate": "2025-03-17T09:26:17Z"
-              }
-            ]
-          },
-          {
-            "obligationType": "GlobeInformationReturn",
-            "status": "Open",
-            "canAmend": true,
-            "submissions": []
-          }
-        ]
-      }
-    ]
-  }
+  "processingDate": "2025-03-17T09:26:17Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2025-01-31",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "UKTR",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": [
+            {
+              "submissionType": "UKTR_CREATE",
+              "receivedDate": "2025-03-17T09:26:17Z"
+            }
+          ]
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Open",
+          "canAmend": true,
+          "submissions": []
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -213,10 +210,11 @@ If an organisation is required to submit a UKTR (to fulfill an obligation) but d
 
 ```shell
 curl --request POST \
-  --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'content-type: application/json' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return' \
+  --header 'Accept: application/vnd.hmrc.1.0+json' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --data '{
   "accountingPeriodFrom": "2024-01-01",
   "accountingPeriodTo": "2024-12-31",
@@ -232,8 +230,9 @@ A successful response will not include a *chargeReference* as there is no charge
 
 ```json
 {
-  "processingDate": "2025-01-01T09:26:17Z",
+  "processingDate": "2025-03-17T09:26:17Z",
   "formBundleNumber": "119000004320",
+  "chargeReference": null
 }
 ```
 

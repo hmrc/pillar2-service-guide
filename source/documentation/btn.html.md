@@ -25,44 +25,42 @@ Requirements for the organisation can be checked by sending a GET request using 
 
 ```shell
 curl --request GET \
-  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'x-pillar2-id: {{pillar2Id}}'
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
+  --header 'Accept: application/vnd.hmrc.1.0+json'
 ```
 
 ```json
 {
-  "success": {
-    "processingDate": "2025-03-17T09:26:17Z",
-    "accountingPeriodDetails": [
-      {
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31",
-        "dueDate": "2025-01-31",
-        "underEnquiry": false,
-        "obligations": [
-          {
-            "obligationType": "Pillar2TaxReturn",
-            "status": "Fulfilled",
-            "canAmend": true,
-            "submissions": [
-              {
-                "submissionType": "UKTR",
-                "receivedDate": "2025-03-17T09:26:17Z"
-              }
-            ]
-          },
-          {
-            "obligationType": "GlobeInformationReturn",
-            "status": "Open",
-            "canAmend": true,
-            "submissions": []
-          }
-        ]
-      }
-    ]
-  }
+  "processingDate": "2025-03-17T09:26:17Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2025-01-31",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "UKTR",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": [
+            {
+              "submissionType": "UKTR_CREATE",
+              "receivedDate": "2025-03-17T09:26:17Z"
+            }
+          ]
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Open",
+          "canAmend": true,
+          "submissions": []
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -70,58 +68,52 @@ Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of
 
 ```shell
 curl --request POST \
-  --url http://test-api.service.hmrc.gov.uk/organisations/pillar-two/below-threshold-notification \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'content-type: application/json' \
-  --header 'x-pillar2-id: {{pillar2Id}}'
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/below-threshold-notification' \
+  --header 'Accept: application/vnd.hmrc.1.0+json' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --data '{
-    "accountingPeriodFrom": "2024-01-01",
-    "accountingPeriodTo": "2024-12-31",
-  }'
+  "accountingPeriodFrom": "2024-01-01",
+  "accountingPeriodTo": "2024-12-31"
+}'
 ```
 
 
-A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "Pillar2TaxReturn" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GlobeInformationReturn" *obligationType* is no longer required for this accounting period and is not returned in the response. 
+A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "UKTR" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GIR" *obligationType* is no longer required for this accounting period and is not returned in the response. 
 
 ```shell
 curl --request GET \
-  --url 'http://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
-  --header 'accept: application/vnd.hmrc.1.0+json' \
-  --header 'authorization: Bearer {{bearer_token}}' \
-  --header 'x-pillar2-id: {{pillar2Id}}'
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
+  --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
+  --header 'Accept: application/vnd.hmrc.1.0+json'
 ```
 
 ```json
 {
-  "success": {
-    "processingDate": "2025-03-17T09:26:17Z",
-    "accountingPeriodDetails": [
-      {
-        "startDate": "2024-01-01",
-        "endDate": "2024-12-31",
-        "dueDate": "2025-01-31",
-        "underEnquiry": false,
-        "obligations": [
-          {
-            "obligationType": "Pillar2TaxReturn",
-            "status": "Fulfilled",
-            "canAmend": true,
-            "submissions": [
-              {
-                "submissionType": "UKTR",
-                "receivedDate": "2025-03-17T09:26:17Z"
-              },
-              {
-                "submissionType": "BTN",
-                "receivedDate": "2025-03-22T09:30:12Z"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "processingDate": "2025-05-02T07:28:08Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2025-05-01",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "UKTR",
+          "status": "Fulfilled",
+          "canAmend": false,
+          "submissions": [
+            {
+              "submissionType": "BTN",
+              "receivedDate": "2025-05-02T07:27:09Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 ```
 
