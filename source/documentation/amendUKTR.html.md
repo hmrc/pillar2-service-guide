@@ -8,7 +8,7 @@ weight: 4
 ## Overview
 If a submitted UK tax return **(UKTR)** needs to be updated, an amendment can be sent via the API. 
 
-The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. Attempting to amend a return which has not been submitted will return a 422 client error response. You can find more information on code 422 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. Attempting to amend a return which has not been submitted will return a 422 client error response. You can find more information on code 422 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-test-api/1.0).
 
 Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
@@ -29,7 +29,7 @@ Once a UKTR has been submitted, it can be amended any number of times before the
 
 ```shell
 curl --request GET \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --header 'Accept: application/vnd.hmrc.1.0+json'
@@ -73,7 +73,7 @@ When sending an *AmendUKTR* request, the full return must be submitted (but with
 
 ```shell
 curl --request PUT \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/uk-tax-return' \
   --header 'Accept: application/vnd.hmrc.1.0+json' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'Content-Type: application/json' \
