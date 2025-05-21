@@ -25,7 +25,7 @@ Requirements for the organisation can be checked by sending a GET request using 
 
 ```shell
 curl --request GET \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --header 'Accept: application/vnd.hmrc.1.0+json'
@@ -68,7 +68,7 @@ Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of
 
 ```shell
 curl --request POST \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/below-threshold-notification' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/below-threshold-notification' \
   --header 'Accept: application/vnd.hmrc.1.0+json' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'Content-Type: application/json' \
@@ -84,7 +84,7 @@ A new request using the *Obligations and Submissions* endpoint shows that the BT
 
 ```shell
 curl --request GET \
-  --url 'https://api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
+  --url 'https://test-api.service.hmrc.gov.uk/organisations/pillar-two/obligations-and-submissions?fromDate=2024-01-01&toDate=2024-12-31' \
   --header 'Authorization: Bearer YOUR_BEARER_TOKEN' \
   --header 'X-Pillar2-Id: YOUR_PILLAR2_ID' \
   --header 'Accept: application/vnd.hmrc.1.0+json'
