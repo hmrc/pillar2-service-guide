@@ -5,16 +5,18 @@ weight: 2
 
 # API Testing Setup
 
-## Stateful Sandbox
+## Stateful sandbox
 To help with API testing, a "stateful sandbox" environment has been created to mirror the production environment. 
 
 The tester should start by creating a [test user](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0). The test user response will return a username, password and a *Pillar 2 ID*. The Pillar 2 ID must be included in the header of each test request, or an error will be returned. 
 
 The next step is to create a test organisation using the *Create Test Organisation* endpoint. The test organisation can be used for the duration of testing, and should be deleted once a test scenario is completed. If the tester does not delete the organisation, it will be deleted within 28 days. 
 
-## Test Organisation
+If required, the tester can also create a simulation of a Globe Information Return (**GIR**). 
 
 <a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation.svg" alt="Create test organisation"/></a>
+
+## Test organisation
 
 The test organisation facilitates the storage of submissions against a specific accounting period. This data is then used to fulfill any GET requests made on the API by the *Obligations and Submissions* endpoint.
 
@@ -43,5 +45,9 @@ curl --request POST \
 }'
 ```
 
+## Globe information return
 
+**Important**: Creating a GIR simulation in the test environment is for testing purposes only, and does reflect the process for submitting an entity’s GIR to comply with Pillar 2. To find out how to submit a GIR using the Pillar 2 API, please go to the <em>Submit Overseas Return Notification</em> page.
+
+Once the test organisation has been created, a simulation of a GIR can be created in the sandbox to help support testing the <em>Retrieve Obligations and Submissions</em> endpoint. The request is submitted using the dates for the specified accounting period.
 
