@@ -7,7 +7,7 @@ weight: 3
 
 ## Overview
 
-Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UK Tax Return **(UKTR)** for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
+Under Pillar 2 requirements, MNEs and enterprise groups based in the UK have an obligation to submit a UK Tax Return (**UKTR**) for every accounting period. MNEs/groups (or their agents) can use the Pillar 2 API to submit the UKTR and meet this obligation. 
 
 The request structure has four variants created from two dependencies.
 
