@@ -7,7 +7,7 @@ weight: 5
 
 ## Overview
 
-If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a Below-Threshold Notification (**BTN**) removes the obligation to submit a UK Tax Return **(UKTR)** for both current (and future) accounting periods. 
+If group revenues fall below the threshold where the Pillar 2 tax is applied, sending a Below-Threshold Notification (**BTN**) removes the obligation to submit a UK Tax Return (**UKTR**) for both current (and future) accounting periods. 
 
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
@@ -21,7 +21,7 @@ A BTN is submitted for a specific accounting period.
 
 <a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
-Requirements for the organisation can be checked by sending a GET request using the *Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
+Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
 
 ```shell
 curl --request GET \
@@ -80,7 +80,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "UKTR" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GIR" *obligationType* is no longer required for this accounting period and is not returned in the response. 
+A new request using the *Retrieve Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "UKTR" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GIR" *obligationType* is no longer required for this accounting period and is not returned in the response. 
 
 ```shell
 curl --request GET \
