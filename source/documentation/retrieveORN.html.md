@@ -7,9 +7,9 @@ weight: 3
 
 ## Overview
 
-An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a Multinational Enterprise (**MNE**). The ORN contains information on the jurisdiction where the entity’s GloBE Information Return (**GIR**) has been submitted. 
+An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a Multinational Enterprise (**MNE**). The ORN contains details of the jurisdiction where the group’s GloBE Information Return (**GIR**) has been submitted. 
 
-The *Retrieve Overseas Return Notification* endpoint has an HTTP GET code, so it is used to retrieve the entity’s ORN information submitted for a specific accounting period (both submission and amendments). The information returned matches the information submitted - the date and country where the GIR was filed, the entity name and the Tax Identification Number (**TIN**) used for the GIR. 
+The *Retrieve Overseas Return Notification* endpoint has an HTTP GET code, so it is used to retrieve the filing member’s ORN information submitted for a specific accounting period (both submission and amendments). The information returned matches the information submitted - the ORN submission date, the country code where the GIR was filed, and the name and Tax Identification Number (**TIN**) of the entity which submitted the GIR. 
 
 
 ## Testing
@@ -32,7 +32,7 @@ curl --request GET \
   --header 'x-pillar2-id: YOUR_PILLAR2_ID'
 ```
 
-A successful response will include the TIN and issuing country for the GIR, as well as the accounting period and the processing date and location for the GIR submission. 
+A successful response must include the Tax Identification Number (TIN) of the entity which submitted the GIR, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
 
 ```json
 {
@@ -40,10 +40,10 @@ A successful response will include the TIN and issuing country for the GIR, as w
   "accountingPeriodFrom": "2024-01-01",
   "accountingPeriodTo": "2024-12-31",
   "filedDateGIR": "2025-01-10",
-  "countryGIR": "US",
-  "reportingEntityName": "Newco PLC",
-  "TIN": "US12345678",
-  "issuingCountryTIN": "US"
+  "countryGIR": "CA",
+  "reportingEntityName": "Newco Inc",
+  "TIN": "CA12345678",
+  "issuingCountryTIN": "CA"
 }
 ```
 
