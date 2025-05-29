@@ -7,14 +7,13 @@ weight: 3
 
 ## Overview
 
-An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a Multinational Enterprise (**MNE**). The ORN contains information on the jurisdiction where the entity’s GloBE Information Return (**GIR**) has been submitted. 
+An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a Multinational Enterprise (**MNE**). The ORN contains details of the jurisdiction where the group’s GloBE Information Return (**GIR**) has been submitted. 
 
-If the entity is registered with Pillar 2, they (or their agent) can send a request using the *Submit Overseas Return Notification* endpoint. This will inform HMRC that they have submitted their GIR for the specified accounting period to another jurisdiction, and it fulfils their information return obligation. 
+If the filing member is registered with Pillar 2, they (or their agent) can send a request using the *Submit Overseas Return Notification* endpoint. This will inform HMRC the filing member has submitted their GIR for the specified accounting period to another jurisdiction, and it fulfils the obligation to submit an information return. 
 
-An entity which has been classed as “UK Only” cannot submit an ORN. 
+If a filing member is registered solely for Domestic Top-up Tax it is recorded as “UK Only”, and cannot submit an ORN. 
 
 ## Testing
-
 
 Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation.
 
@@ -24,7 +23,7 @@ This diagram shows a request which successfully submits an ORN.
 
 <a href="figures/submitorn-test-sequence.svg" target="blank"><img src="figures/submitorn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Submit Overseas Return Notification" style="width:520px;"/></a>
 
-The *Submit Overseas Return Notification* request should include the Tax Identification Number (**TIN**) and issuing country for the GIR, as well as the accounting period and the date and location for the GIR.
+The *Submit Overseas Return Notification* request must include the Tax Identification Number (**TIN**) of the entity submitting the GIR, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
  
 All fields in the request are mandatory.  
 
@@ -38,10 +37,10 @@ curl --request POST \
   "accountingPeriodFrom": "2024-01-01",
   "accountingPeriodTo": "2024-12-31",
   "filedDateGIR": "2025-01-10",
-  "countryGIR": "US",
-  "reportingEntityName": "Newco PLC",
-  "TIN": "US12345678",
-  "issuingCountryTIN": "US"
+  "countryGIR": "CA",
+  "reportingEntityName": "ReportCo Inc",
+  "TIN": "CA12345678",
+  "issuingCountryTIN": "CA"
 }'
 ```
 
@@ -80,7 +79,7 @@ Sending a GET request using the *Retrieve Obligations and Submissions* endpoint 
                        {
               "submissionType": "ORN_CREATE",
               "receivedDate": "2025-05-20T14:08:41Z",
-              "country": "US"
+              "country": "CA"
             }
           ]
         }
