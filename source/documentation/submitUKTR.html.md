@@ -82,7 +82,7 @@ This scenario demonstrates submitting a UKTR that satisfies the "UKTR" *obligati
 
 <a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;"/></a>
 
-Once the tax return is submitted, a GET request can be sent using the *Obligations and Submissions* endpoint to check the obligations defined for this organisation.
+Once the tax return is submitted, a GET request can be sent using the *Retrieve Obligations and Submissions* endpoint to check the obligations defined for this organisation.
 
 ```shell
 curl --request GET \
@@ -169,7 +169,7 @@ If the *SubmitUKTR* request is successful, it will generate the following respon
 }
 ```
 
-Sending a new request using the *Obligations and Submissions* endpoint will display the successful submission and the fulfilled obligation.
+Sending a new request using the *Retrieve Obligations and Submissions* endpoint will display the successful submission and the fulfilled obligation.
 
 ```json
 {
