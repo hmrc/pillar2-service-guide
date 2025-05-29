@@ -6,7 +6,7 @@ weight: 4
 # Amend UK tax return
 
 ## Overview
-If a submitted UK tax return **(UKTR)** needs to be updated, an amendment can be sent via the API. 
+If a submitted UK tax return (**UKTR**) needs to be updated, an amendment can be sent via the API. 
 
 The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. Attempting to amend a return which has not been submitted will return a 422 client error response. You can find more information on code 422 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
