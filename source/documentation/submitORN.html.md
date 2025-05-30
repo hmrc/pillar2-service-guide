@@ -23,7 +23,7 @@ This diagram shows a request which successfully submits an ORN.
 
 <a href="figures/submitorn-test-sequence.svg" target="blank"><img src="figures/submitorn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Submit Overseas Return Notification" style="width:520px;"/></a>
 
-The *Submit Overseas Return Notification* request must include the Tax Identification Number (**TIN**) of the entity submitting the GIR, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
+The *Submit Overseas Return Notification* request must include the Tax Identification Number (**TIN**) of the entity submitting the ORN, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
  
 All fields in the request are mandatory.  
 
