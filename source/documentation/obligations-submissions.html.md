@@ -7,19 +7,23 @@ weight: 6
 
 ## Overview
 
-Pillar 2 information can be organised into *obligations* and *submissions* for each accounting period. There are currently two submission types which can be retrieved using the API (UKTR, BTN) with another two planned (ORN, GIR). The *Obligations and Submissions* endpoint has an HTTP GET code, so it is only ever used to retrieve information on an entity’s obligations, the submissions required to meet these obligations and the due date for each obligation.
+Pillar 2 information can be organised into *obligations* and *submissions* for each accounting period. There are currently two submission types which can be retrieved using the API (UKTR, BTN) with another two planned (ORN, GIR). The *Retrieve Obligations and Submissions* endpoint has an HTTP GET code, so it is only ever used to retrieve information on an entity’s obligations, the submissions required to meet these obligations and the due date for each obligation.
 
 Obligations are instructions defined by HMRC for each entity. The first obligation relates to submitting a UKTR or BTN. The entity uses the API request to send information (a submission) to HMRC. Multiple submissions can be sent to fulfill an obligation within an accounting period, where a UKTR (or BTN) can be submitted. 
 
-The *Obligations and Submissions* response will return a maximum of ten submissions for each *obligationType*. If more than ten submissions have been sent within the requested date range, the ten most recent *submissionType* items will be returned.
+The *Retrieve Obligations and Submissions* response will return a maximum of ten submissions for each *obligationType*. If more than ten submissions have been sent within the requested date range, the ten most recent *submissionType* items will be returned.
 
 ## Testing
 
 Before using the sandbox, please read through the "Test API Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
 
+### Retrieve obligations and submissions 
+
+The diagram below shows a *Retrieve Obligations and Submissions* request and response. 
+
 <a href="figures/obligations-and-submissions.svg" target="blank"><img src="figures/obligations-submissions-sequence.svg" alt="Sequence diagram showing REST calls for returning obligations and submisssions" style="width:520px;" /></a>
 
-An *Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
+A *Retrieve Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
 
 ```shell
 curl --request GET \
