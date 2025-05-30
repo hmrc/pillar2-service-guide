@@ -9,7 +9,7 @@ weight: 3
 
 An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a Multinational Enterprise (**MNE**). The ORN contains details of the jurisdiction where the group’s GloBE Information Return (**GIR**) has been submitted. 
 
-If the filing member is registered with Pillar 2, they (or their agent) can send a request using the *Submit Overseas Return Notification* endpoint. This will inform HMRC the filing member has submitted their GIR for the specified accounting period to another jurisdiction, and it fulfils the obligation to submit an information return. 
+If the filing member is registered for Pillar 2, they (or their agent) can send a request using the *Submit Overseas Return Notification* endpoint. This will inform HMRC the filing member has submitted their GIR for the specified accounting period to another jurisdiction, and it fulfils the obligation to submit an information return. 
 
 If a filing member is registered solely for Domestic Top-up Tax it is recorded as “UK Only”, and cannot submit an ORN. 
 
