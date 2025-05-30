@@ -32,7 +32,7 @@ curl --request GET \
   --header 'x-pillar2-id: YOUR_PILLAR2_ID'
 ```
 
-A successful response must include the Tax Identification Number (TIN) of the entity which submitted the GIR, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
+The response will return the answers submitted for the most recent action (either the original ORN submission or the latest ORN amendment). 
 
 ```json
 {
