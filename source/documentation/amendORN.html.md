@@ -67,7 +67,7 @@ The response shows a *submissionType* “ORN_CREATE” under the “GIR” *obli
 }
 ```
 
-The *Amend Overseas Return Notification* request must include the Tax Identification Number (TIN) of the entity which submitted the GIR, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
+The *Amend Overseas Return Notification* request must include the Tax Identification Number (TIN) of the entity which submitted the ORN, the issuing country for the TIN, the accounting period from and to dates, and details of when and where the GIR was submitted (submission date and country code).
  
 All fields in the request are mandatory.  
 
