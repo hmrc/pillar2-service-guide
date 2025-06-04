@@ -1,6 +1,6 @@
 ---
 title: Amend Overseas Return Notification | Pillar 2 Service Guide
-weight: 3
+weight: 8
 ---
 
 # Amend overseas return notification

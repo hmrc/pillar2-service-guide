@@ -1,6 +1,6 @@
 ---
 title: Retrieve Overseas Return Notification | Pillar 2 Service Guide
-weight: 3
+weight: 9
 ---
 
 # Retrieve overseas return notification
