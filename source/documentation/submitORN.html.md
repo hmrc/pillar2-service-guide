@@ -1,6 +1,6 @@
 ---
 title: Submit Overseas Return Notification | Pillar 2 Service Guide
-weight: 3
+weight: 7
 ---
 
 # Submit overseas return notification
