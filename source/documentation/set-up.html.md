@@ -48,7 +48,7 @@ curl --request POST \
 
 ## Globe information return
 
-**Important**: Creating a GIR simulation in the test environment is for testing purposes only, and does reflect the process for submitting an entity’s GIR to comply with Pillar 2. To find out how to submit a GIR using the Pillar 2 API, please go to the *Submit Overseas Return Notification* page.
+**Important**: Creating a GIR simulation in the test environment is for testing purposes only, and does reflect the process for submitting an entity’s GIR to comply with Pillar 2.
 
 Once the test organisation has been created, a simulation of a GIR can be created in the sandbox to help support testing the <em>Retrieve Obligations and Submissions</em> endpoint. The request is submitted using the dates for the specified accounting period.
 
