@@ -45,16 +45,16 @@ GEM
     execjs (2.10.0)
     fast_blank (1.0.1)
     fastimage (2.4.0)
-    ffi (1.17.2)
     ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
-    google-protobuf (4.30.2)
+    google-protobuf (4.31.0-aarch64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.2-aarch64-linux)
+    google-protobuf (4.31.0-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.2-x86_64-linux)
+    google-protobuf (4.31.0-x86_64-linux-gnu)
       bigdecimal
       rake (>= 13)
     govuk_tech_docs (4.4.0)
@@ -148,14 +148,12 @@ GEM
     middleman-syntax (3.5.0)
       middleman-core (>= 3.2)
       rouge (~> 3.2)
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
     multi_json (1.15.0)
     mutex_m (0.3.0)
-    nokogiri (1.18.8)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.8-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
@@ -170,7 +168,7 @@ GEM
     parslet (2.0.0)
     public_suffix (6.0.2)
     racc (1.8.1)
-    rack (2.2.13)
+    rack (2.2.16)
     rack-livereload (0.3.17)
       rack
     rake (13.2.1)
@@ -181,13 +179,12 @@ GEM
     rexml (3.4.1)
     rouge (3.30.0)
     sass (3.4.25)
-    sass-embedded (1.87.0)
-      google-protobuf (~> 4.30)
-      rake (>= 13)
-    sass-embedded (1.87.0-aarch64-linux-gnu)
-      google-protobuf (~> 4.30)
-    sass-embedded (1.87.0-x86_64-linux-gnu)
-      google-protobuf (~> 4.30)
+    sass-embedded (1.89.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-arm64-darwin)
+      google-protobuf (~> 4.31)
+    sass-embedded (1.89.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.31)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-embedded (1.78.0)
@@ -216,7 +213,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
-  ruby
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
