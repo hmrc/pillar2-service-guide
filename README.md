@@ -82,7 +82,7 @@ This will update the `Gemfile.lock`
 In some cases, the [latest release](https://github.com/alphagov/tech-docs-gem/releases) of the gem might not be fetched.
 If this happens, edit the Gemfile to specify the latest version explicitly, for example
 ```
-gem 'govuk_tech_docs', '4.4.0'
+gem 'govuk_tech_docs', '5.0.1'
 ```
 and run the update command again. Once updated, remove the explicit version and run the update once more.
 
