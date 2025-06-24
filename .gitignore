@@ -1,4 +1,5 @@
-
+.DS_Store
+core
 logs
 project/project
 project/target
