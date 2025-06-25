@@ -57,7 +57,7 @@ GEM
     google-protobuf (4.31.1-x86_64-linux-gnu)
       bigdecimal
       rake (>= 13)
-    govuk_tech_docs (4.4.0)
+    govuk_tech_docs (5.0.1)
       autoprefixer-rails (~> 10.2)
       base64
       bigdecimal
@@ -195,7 +195,7 @@ GEM
       logger
       rack (>= 2.2.4, < 4)
     temple (0.10.3)
-    terser (1.2.5)
+    terser (1.2.6)
       execjs (>= 0.3.0, < 3)
     thin (1.8.2)
       daemons (~> 1.0, >= 1.0.9)
