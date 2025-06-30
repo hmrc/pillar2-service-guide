@@ -2,7 +2,7 @@ import play.sbt.PlayImport._
 import sbt._
 
 object AppDependencies {
-  lazy val bootStrapPlayVersion = "9.12.0"
+  lazy val bootStrapPlayVersion = "9.13.0"
   lazy val flexmarkAllVersion   = "0.64.8"
 
   lazy val compile: Seq[ModuleID] = Seq(
