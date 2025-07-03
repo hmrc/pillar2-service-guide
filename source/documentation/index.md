@@ -16,10 +16,13 @@ This service guide explains how you can integrate your software with the [Pillar
 
 The API provides MNEs (and their agents) with the capability to
 
-- submit a UK tax return (**UKTR**)
+- submit a UK Tax Return (**UKTR**)
 - amend a submitted UKTR
 - submit a Below-Threshold Notification (**BTN**)
 - return obligation and submission details for a specified accounting period
+- submit an Overseas Return Notification (**ORN**)
+- amend a submitted ORN
+- retrieve the details of a submitted ORN
 
 
 ## Getting started
