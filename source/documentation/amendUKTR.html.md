@@ -12,7 +12,7 @@ The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. 
 
 Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
-For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months for each accounting period, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
+For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months (minus 1 day) for each accounting period, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
