@@ -73,26 +73,37 @@ A successful response will return a processing date.
 }
 ```
 
-When an *Obligations and Submissions* GET request is submitted, the response will display a "GIR_CREATE" *submissionType* under the "GIR" *obligationType*.
+When an *Obligations and Submissions* GET request is submitted, the response will display a "GIR" *submissionType* under the "GIR" *obligationType*.
 
 ```json
 {
-  "processingDate": "2025-05-22T13:44:44Z",
+  "processingDate": "2025-07-04T09:12:09Z",
   "accountingPeriodDetails": [
     {
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "dueDate": "2025-05-21",
+      "dueDate": "2025-07-01",
       "underEnquiry": false,
       "obligations": [
         {
-          "obligationType": "GIR",
+          "obligationType": "UKTR",
           "status": "Open",
           "canAmend": true,
           "submissions": []
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": [
+            {
+              "submissionType": "GIR",
+              "receivedDate": "2025-07-04T09:12:05Z"
+            }
+          ]
         }
       ]
     }
   ]
-}       
+}     
 ```
