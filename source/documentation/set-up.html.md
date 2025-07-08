@@ -12,7 +12,7 @@ The tester should start by creating a [test user](https://developer.service.hmrc
 
 The next step is to create a test organisation using the *Create Test Organisation* endpoint. The test organisation can be used for the duration of testing, and should be deleted once a test scenario is completed. If the tester does not delete the organisation, it will be deleted within 28 days. 
 
-If required, the tester can also create a simulation of a GloBE Information Return (**GIR**) using the *Create a Test Globe Information Return* endpoint. 
+If required, the tester can also create a simulation of a GloBE Information Return (**GIR**) using the *Create a Test GloBE Information Return* endpoint. 
 
 
 <a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation.svg" alt="Create test organisation"/></a>
