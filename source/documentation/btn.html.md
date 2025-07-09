@@ -11,7 +11,7 @@ If group revenues fall below the threshold where the Pillar 2 tax is applied, se
 
 Your group can submit a BTN if consolidated annual revenues are below €750 million in at least 2 of the previous 4 accounting periods, and are not expected to be above €750 million within the next 2 accounting periods.
 
-A *SubmitBTN* request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
+A *Submit Below-Threshold Notification* request requires you to send the accounting period start and end dates, and a successful request returns a processing date. 
 
 ## Testing
 
