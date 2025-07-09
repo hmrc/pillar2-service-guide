@@ -21,7 +21,7 @@ A BTN is submitted for a specific accounting period.
 
 <a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
-Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, the *status* is set to "Open" (ready to accept submissions) for both the "UKTR" and "GIR" *obligationType*. 
+Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, the *status* is set to "Open" (obligation not met) for both the "UKTR" and "GIR" *obligationType*. 
 
 ```shell
 curl --request GET \
@@ -75,7 +75,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Retrieve Obligations and Submissions* endpoint shows that both the "UKTR" and "GIR" *obligationType* now have *status* "Fulfilled" (submission received), and the BTN has been recorded as a *submissionType* under UKTR.
+A new request using the *Retrieve Obligations and Submissions* endpoint shows that both the "UKTR" and "GIR" *obligationType* now have *status* "Fulfilled" (obligation met), and the BTN has been recorded as a *submissionType* under UKTR.
 
 ```shell
 curl --request GET \
@@ -118,7 +118,7 @@ curl --request GET \
 }
 ```
 
-If the organisation breaches the threshold and has to submit a UKTR, the *Obligations and Submissions* response will show the *status* for the "UKTR" *obligationType* set to "Fulfilled" as the BTN submission has been superseded. The *status* for the GIR *obligationType* will be set to "Open". 
+If the organisation breaches the threshold and has to submit a UKTR, the *Obligations and Submissions* response will show the *status* for the "UKTR" *obligationType* set to "Fulfilled", with the BTN submission superseded by the UKTR submission. The *status* for the GIR *obligationType* will be set to "Open", as the GIR obligation is no longer met by the BTN submission. 
 
 ```json
 {
