@@ -21,7 +21,7 @@ A BTN is submitted for a specific accounting period.
 
 <a href="figures/below-threshold-notification.svg" target="blank"><img src="figures/btn-test-sequence.svg" alt="Sequence diagram showing REST calls for testing Below-Threshold Notification" style="width:520px;" /></a>
 
-Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, a UK tax return has already been submitted, but a BTN will still be accepted and supersede the previous submission.
+Requirements for the organisation can be checked by sending a GET request using the *Retrieve Obligations and Submissions* endpoint. In this example, the *status* of both the "UKTR" and "GIR" *obligationType* are set to "Open" (ready to accept submissions). 
 
 ```shell
 curl --request GET \
@@ -33,24 +33,19 @@ curl --request GET \
 
 ```json
 {
-  "processingDate": "2025-03-17T09:26:17Z",
+  "processingDate": "2025-07-09T09:17:42Z",
   "accountingPeriodDetails": [
     {
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "dueDate": "2025-01-31",
+      "dueDate": "2025-07-01",
       "underEnquiry": false,
       "obligations": [
         {
           "obligationType": "UKTR",
-          "status": "Fulfilled",
+          "status": "Open",
           "canAmend": true,
-          "submissions": [
-            {
-              "submissionType": "UKTR_CREATE",
-              "receivedDate": "2025-03-17T09:26:17Z"
-            }
-          ]
+          "submissions": []
         },
         {
           "obligationType": "GIR",
@@ -80,7 +75,7 @@ curl --request POST \
 ```
 
 
-A new request using the *Retrieve Obligations and Submissions* endpoint shows that the BTN has been recorded as a submission under the "UKTR" *obligationType* and has marked as "Fulfilled". As a BTN indicates the entity is below the revenue threshold, a "GIR" *obligationType* is no longer required for this accounting period and is not returned in the response. 
+A new request using the *Retrieve Obligations and Submissions* endpoint shows that both the UKTR and GIR *obligationType* now have *status* "Fulfilled" (obligation successfully submitted), and the BTN has been recorded *submissionType* under UKTR.
 
 ```shell
 curl --request GET \
@@ -92,24 +87,30 @@ curl --request GET \
 
 ```json
 {
-  "processingDate": "2025-05-02T07:28:08Z",
+  "processingDate": "2025-07-09T09:18:18Z",
   "accountingPeriodDetails": [
     {
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "dueDate": "2025-05-01",
+      "dueDate": "2025-07-01",
       "underEnquiry": false,
       "obligations": [
         {
           "obligationType": "UKTR",
           "status": "Fulfilled",
-          "canAmend": false,
+          "canAmend": true,
           "submissions": [
             {
               "submissionType": "BTN",
-              "receivedDate": "2025-05-02T07:27:09Z"
+              "receivedDate": "2025-07-09T09:18:16Z"
             }
           ]
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": []
         }
       ]
     }
@@ -117,3 +118,41 @@ curl --request GET \
 }
 ```
 
+If the organisation breaches the threshold and submits a UKTR, the *Obligations and Submissions* response will show the UKTR *obligationType*  
+
+```json
+{
+  "processingDate": "2025-07-09T09:19:26Z",
+  "accountingPeriodDetails": [
+    {
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31",
+      "dueDate": "2025-07-01",
+      "underEnquiry": false,
+      "obligations": [
+        {
+          "obligationType": "UKTR",
+          "status": "Fulfilled",
+          "canAmend": true,
+          "submissions": [
+            {
+              "submissionType": "UKTR_CREATE",
+              "receivedDate": "2025-07-09T09:19:23Z"
+            },
+            {
+              "submissionType": "BTN",
+              "receivedDate": "2025-07-09T09:18:16Z"
+            }
+          ]
+        },
+        {
+          "obligationType": "GIR",
+          "status": "Open",
+          "canAmend": true,
+          "submissions": []
+        }
+      ]
+    }
+  ]
+}
+```
