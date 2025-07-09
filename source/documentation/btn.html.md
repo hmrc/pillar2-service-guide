@@ -118,7 +118,7 @@ curl --request GET \
 }
 ```
 
-If the organisation breaches the threshold and has to submit a UKTR, the *Obligations and Submissions* response will show the *status* for the "UKTR" *obligationType* set to "Fulfilled", with the BTN submission superseded by the UKTR submission. The *status* for the GIR *obligationType* will be set to "Open", as the GIR obligation is no longer met by the BTN submission. 
+If the organisation breaches the threshold and has to submit a UKTR, the *Retrieve Obligations and Submissions* response will show the *status* for the "UKTR" *obligationType* set to "Fulfilled", with the BTN submission superseded by the UKTR submission. The *status* for the GIR *obligationType* will be set to "Open", as the GIR obligation is no longer met by the BTN submission. 
 
 ```json
 {
