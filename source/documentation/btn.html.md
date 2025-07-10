@@ -3,7 +3,7 @@ title: Below-Threshold Notification | Pillar 2 Service Guide
 weight: 5
 ---
 
-# Below-threshold notification
+# Submit below-threshold notification
 
 ## Overview
 
@@ -59,7 +59,7 @@ curl --request GET \
 }
 ```
 
-Using the *SubmitBTN* endpoint, a BTN can be submitted at any time regardless of the data previously sent. For a successful BTN response, the submitted accounting period must match the previously defined accounting period.
+Using the *Submit Below-Threshold Notification* endpoint, a BTN can be submitted at any time regardless of the data previously sent. For a successful BTN response, the submitted accounting period must match the previously defined accounting period.
 
 ```shell
 curl --request POST \
