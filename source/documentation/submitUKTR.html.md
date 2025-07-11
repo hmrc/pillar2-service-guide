@@ -159,7 +159,7 @@ curl --request POST \
 }'
 ```
 
-If the *SubmitUKTR* request is successful, it will generate the following response. 
+If the *Submit UK Tax Return* request is successful, it will generate the following response. 
 
 ```json
 {
@@ -206,7 +206,7 @@ Sending a new request using the *Retrieve Obligations and Submissions* endpoint 
 
 #### Nil Return
 
-If an organisation is required to submit a UKTR (to fulfill an obligation) but does not have any liabilities to declare, they will have to submit a "Nil Return". A nil return is also submitted through the *SubmitUKTR* endpoint, but has a different structure. 
+If an organisation is required to submit a UKTR (to fulfill an obligation) but does not have any liabilities to declare, they will have to submit a "Nil Return". A nil return is also submitted through the *Submit UK Tax Return* endpoint, but has a different structure. 
 
 ```shell
 curl --request POST \
@@ -239,7 +239,7 @@ A successful response will not include a *chargeReference* as there is no charge
 
 #### Duplicate Submissions
 
-Once a UKTR has been submitted, it cannot be submitted again for the same accounting period. The *AmendUKTR* endpoint must be used for any amendments.
+Once a UKTR has been submitted, it cannot be submitted again for the same accounting period. The *Amend UK Tax Return* endpoint must be used for any amendments.
 
 <a href="figures/duplicate-submissions.svg" target="blank"><img src="figures/duplicate-submissions-sequence.svg" alt="Sequence diagram showing client error on duplicate submission" style="width:520px;" /></a>
 
