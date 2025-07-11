@@ -8,7 +8,7 @@ weight: 4
 ## Overview
 If a submitted UK tax return (**UKTR**) needs to be updated, an amendment can be sent via the API. 
 
-The *AmendUKTR* request has the same structure and data fields as *SubmitUKTR*. Attempting to amend a return which has not been submitted will return a 422 client error response. You can find more information on code 422 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
+The *Amend UK Tax Return* request has the same structure and data fields as *Submit UK Tax Return*. Attempting to amend a return which has not been submitted will return a 422 client error response. You can find more information on code 422 errors in the [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0).
 
 Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
@@ -69,7 +69,7 @@ The response shows that a UKTR has been submitted and the amendment window is st
 }
 ```
 
-When sending an *AmendUKTR* request, the full return must be submitted (but with amended fields). This API will not calculate deltas; it will supersede the previous UKTR with the new payload. This behaviour will be unchanged regardless of how many amendments are submitted.
+When sending an *Amend UK Tax Return* request, the full return must be submitted (but with amended fields). This API will not calculate deltas; it will supersede the previous UKTR with the new payload. This behaviour will be unchanged regardless of how many amendments are submitted.
 
 ```shell
 curl --request PUT \
