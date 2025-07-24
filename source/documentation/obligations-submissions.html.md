@@ -1,5 +1,5 @@
 ---
-title: Retrieve obligations and Submissions | Pillar 2 Service Guide
+title: Retrieve Obligations and Submissions | Pillar 2 Service Guide
 weight: 6
 ---
 
