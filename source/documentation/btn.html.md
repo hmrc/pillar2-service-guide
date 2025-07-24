@@ -1,9 +1,9 @@
 ---
-title: Below-Threshold Notification | Pillar 2 Service Guide
+title: Submit Below-Threshold Notification | Pillar 2 Service Guide
 weight: 5
 ---
 
-# Below-threshold notification
+# Submit below-threshold notification
 
 ## Overview
 
