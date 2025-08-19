@@ -19,11 +19,11 @@ If required, the tester can also create a simulation of a GloBE Information Retu
 
 ## Test organisation
 
-The test organisation facilitates the storage of submissions against a specific accounting period. This data is then used to fulfill any GET requests made on the API by the *Obligations and Submissions* endpoint.
+The test organisation facilitates the storage of submissions against a specific accounting period. This data is then used to fulfill any GET requests made on the API by the *Retrieve Obligations and Submissions* endpoint.
 
 The cURL examples shown here will create a UK only test organisation where *domesticOnly* is set to true for a specific accounting period.
 
-The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *SubmitUKTR* endpoint and the conditional flags which depend on this value.
+The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *Submit UK Tax Return* endpoint and the conditional flags which depend on this value.
 
 
 ```shell
@@ -50,7 +50,7 @@ curl --request POST \
 
 **Important**: Creating a GIR simulation in the test environment is for testing purposes only, and does not reflect the process for submitting an entity’s GIR to comply with Pillar 2.
 
-Once the test organisation has been created, a simulation of a GIR can be created in the sandbox to help support testing the <em>Retrieve Obligations and Submissions</em> endpoint. The request is submitted using the dates for the specified accounting period.
+Once the test organisation has been created, a simulation of a GIR can be created in the sandbox to help support testing the *Retrieve Obligations and Submissions* endpoint. The request is submitted using the dates for the specified accounting period.
 
 ```shell
 curl --request POST \
@@ -73,7 +73,7 @@ A successful response will return a processing date.
 }
 ```
 
-When an *Obligations and Submissions* GET request is submitted, the response will display a "GIR" *submissionType* under the "GIR" *obligationType*.
+When a *Retrieve Obligations and Submissions* GET request is submitted, the response will display a "GIR" *submissionType* under the "GIR" *obligationType*.
 
 ```json
 {
