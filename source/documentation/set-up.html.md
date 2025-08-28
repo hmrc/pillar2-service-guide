@@ -5,7 +5,10 @@ weight: 2
 
 # API testing setup
 
+**Note**: The diagrams in this section relate to the Pillar 2 testing environment **only**. 
+
 ## Stateful sandbox
+
 To help with API testing, a "stateful sandbox" environment has been created to mirror the production environment. 
 
 The tester should start by creating a [test user](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/api-platform-test-user/1.0). The test user response will return a username, password and a *Pillar 2 ID*. The Pillar 2 ID must be included in the header of each test request, or an error will be returned. 
@@ -15,7 +18,7 @@ The next step is to create a test organisation using the *Create Test Organisati
 If required, the tester can also create a simulation of a GloBE Information Return (**GIR**) using the *Create a Test GloBE Information Return* endpoint. 
 
 
-<a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation.svg" alt="Create test organisation"/></a>
+<a href="figures/test-organisation.svg" target="blank"><img src="figures/test-organisation-seuquence.svg" alt="Create test organisation"/></a>
 
 ## Test organisation
 
