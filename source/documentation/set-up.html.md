@@ -20,7 +20,7 @@ If required, the tester can also create a simulation of a GloBE Information Retu
 **Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
 
 
-<a href="figures/test-organisation-sequence.svg" target="blank"><img src="figures/test-organisation-seuquence.svg" alt="Create test organisation"/></a>
+<a href="figures/test-organisation-sequence.svg" target="blank"><img src="figures/test-organisation-sequence.svg" alt="Create test organisation"/></a>
 
 ## Test organisation
 
