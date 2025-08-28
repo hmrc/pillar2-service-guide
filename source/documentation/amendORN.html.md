@@ -11,7 +11,7 @@ An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a 
 
 If the filing member (or agent) has submitted an ORN and is required to amend it, they (or their agent) can send a request using the *Amend Overseas Return Notification* endpoint. Multiple amendments can be requested for any specific ORN within the defined accounting period. 
 
-**Note**: The diagram in this section relate to the Pillar 2 testing environment **only**. 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**. 
 
 ## Testing
 
