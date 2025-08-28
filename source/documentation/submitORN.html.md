@@ -13,6 +13,8 @@ If the filing member is registered for Pillar 2, they (or their agent) can send 
 
 If a filing member is registered solely for Domestic Top-up Tax it is recorded as “UK Only”, and cannot submit an ORN. 
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
+
 ## Testing
 
 Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation.

@@ -18,6 +18,8 @@ If the return is the focus of an active enquiry, amendments are not processed un
 
 If the amend request is successful, it returns a response containing a processing date and a charge reference (unless the amendment changes a liability return to a nil return, where no charge reference is issued).
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**. 
+
 
 ## Testing
 

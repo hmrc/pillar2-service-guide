@@ -71,6 +71,8 @@ If the request is successful, it returns a response containing several pieces of
 </tbody>
 </table>
 
+**Note**: The diagrams in this section relate to the Pillar 2 testing environment **only**.
+
 
 ## Testing
 

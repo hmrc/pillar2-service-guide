@@ -13,6 +13,8 @@ Your group can submit a BTN if consolidated annual revenues are below €750 mil
 
 A *Submit Below-Threshold Notification* request requires you to send the accounting period start and end dates, and a successful request returns a processing date. If the accounting period specified is subject to an HMRC enquiry, the request will return an error. 
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
+
 ## Testing
 
 Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 

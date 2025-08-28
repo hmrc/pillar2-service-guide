@@ -13,6 +13,8 @@ Obligations are instructions defined by HMRC for each entity. The first obligati
 
 The *Retrieve Obligations and Submissions* response will return a maximum of ten submissions for each *obligationType*. If more than ten submissions have been sent within the requested date range, the ten most recent *submissionType* items will be returned.
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
+
 ## Testing
 
 Before using the sandbox, please read through the "Test API Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
