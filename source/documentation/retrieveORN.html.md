@@ -11,6 +11,8 @@ An Overseas Return Notification (**ORN**) is an annual notice sent to HMRC by a 
 
 The *Retrieve Overseas Return Notification* endpoint has an HTTP GET code, so it is used to retrieve the filing member’s ORN information submitted for a specific accounting period (both submission and amendments). The information returned matches the information submitted - the ORN submission date, the country code where the GIR was filed, and the name and Tax Identification Number (**TIN**) of the entity which submitted the GIR. 
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
+
 
 ## Testing
 
