@@ -17,6 +17,8 @@ The next step is to create a test organisation using the *Create Test Organisati
 
 If required, the tester can also create a simulation of a GloBE Information Return (**GIR**) using the *Create a Test GloBE Information Return* endpoint. 
 
+**Note**: The diagram in this section relates to the Pillar 2 testing environment **only**.
+
 
 <a href="figures/test-organisation-sequence.svg" target="blank"><img src="figures/test-organisation-seuquence.svg" alt="Create test organisation"/></a>
 
