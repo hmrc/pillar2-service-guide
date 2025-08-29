@@ -28,19 +28,19 @@ The table here contains some information on the differences between the request 
 <tbody>
 <tr>
 <td>Nil Return (MNE/UK)</td>
-<td>The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
+<td>The <em>obligationMTT</em> field cannot be set to "true" for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Nil Return (UK Only)</td>
-<td>The <em>obligationMTT</em> field is set to false.</td>
+<td>The <em>obligationMTT</em> field is set to "false".</td>
 </tr>
 <tr>
 <td>Liability return (MNE/UK)</td>
-<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field cannot be set to true for a domestic (UK only) group.</td>
+<td>Request includes totals for DTT, IIR, UTPR and overall total. The <em>obligationMTT</em> field cannot be set to "true" for a domestic (UK only) group.</td>
 </tr>
 <tr>
 <td>Liability return (UK Only)</td>
-<td>Request includes totals for DTT and overall total. The request is rejected if it contains amounts for MTT fields. The <em>obligationMTT</em> field is set to false.</td>
+<td>Request includes totals for DTT and overall total. The <em>obligationMTT</em> field is set to "false" and the MTT fields <em>totalLiabilityIIR</em>, <em>amountOwedIIR</em>, <em>totalLiabilityUTPR</em> and <em>amountOwedUTPR</em> are all set to 0, or the request is rejected. </td>
 </tr>
 </tbody>
 </table>
