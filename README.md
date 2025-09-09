@@ -34,6 +34,12 @@ Requirements:
 * [Ruby Version Manager][rbenv]
 * [Node Version Manager][nodenv]
 
+After installing ruby, change the gem sources to use HMRC's artefact repository:
+```shell
+gem sources -r https://rubygems.org/
+gem sources -a https://artefacts.tax.service.gov.uk/artifactory/api/gems/gems/
+````
+
 To live preview:
 ```shell
 bundle install
