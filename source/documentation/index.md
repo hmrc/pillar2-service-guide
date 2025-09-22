@@ -1,4 +1,4 @@
-  ---
+---
 title: Pillar 2 API Service Guide
 weight: 1
 ---
