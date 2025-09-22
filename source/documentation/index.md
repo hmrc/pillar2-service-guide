@@ -1,4 +1,4 @@
----
+  ---
 title: Pillar 2 API Service Guide
 weight: 1
 ---
@@ -137,7 +137,6 @@ Any software solutions which integrate with the Pillar 2 API should comply with 
 
 “Compatible software” can mean a single end-to-end piece of software or a set of compatible software products. Any software needs to meet these minimum functionality standards. 
 
-- Provide HMRC with transaction monitoring fraud prevention header data.
 - Submit a UKTR, or a BTN.
 - Make amendments to a submitted tax return (if required).
 - Retrieve obligation and submission details for a specified accounting period.  
