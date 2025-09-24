@@ -12,18 +12,18 @@ The *Amend UK Tax Return* request has the same structure and data fields as *Sub
 
 Amendments to liability returns (for MNEs and UK only entities) should include evidence of a company ID in the *entityType* field - this can be either the Company Reference Number (**CRN**) or the Unique Taxpayer Reference (**UTR**) for corporation tax.
 
-For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submit due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months (minus 1 day) for each accounting period, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
+For Pillar 2, all submitted returns have an *amendment window*. This is a period after the submission due date where you can amend the return for the specified accounting period. The amendment window lasts 12 months (minus 1 day) for each accounting period, and multiple amendments can be submitted during this time. The amendment window end date does not change if a return is submitted before or after the due date, and you cannot amend a return after the amendment window end date. 
 
 If the return is the focus of an active enquiry, amendments are not processed until the enquiry ends. 
 
-If the amend request is successful, it returns a response containing a processing date and a charge reference (unless the amendment changes a liability return to a nil return, where no charge reference is issued).
+If the *Amend UK Tax Return* request is successful, it returns a response containing a processing date and a charge reference (unless the amendment changes a liability return to a nil return, where no charge reference is issued).
 
 **Note**: The diagram in this section relates to the Pillar 2 testing environment **only**. 
 
 
 ## Testing
 
-Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+Before using the sandbox, please read through the [API Testing Setup](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation. 
 
 <a href="figures/amenduktr-test-sequence.svg" target="blank"><img src="figures/amenduktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing amend UK Tax Return" style="width:520px;" /></a>
 

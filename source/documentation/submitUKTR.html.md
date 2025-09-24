@@ -76,7 +76,7 @@ If the request is successful, it returns a response containing several pieces of
 
 ## Testing
 
-Before using the sandbox, please read through the "API Testing Setup" page of the service guide and work through all the required steps for creating a test user and organisation. 
+Before using the sandbox, please read through the [API Testing Setup](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation. 
 
 ### Scenario 1: Submit UK Tax Return
 
@@ -84,7 +84,7 @@ This scenario demonstrates submitting a UKTR that satisfies the "UKTR" *obligati
 
 <a href="figures/submituktr-test-sequence.svg" target="blank"><img src="figures/submituktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing submit UK Tax Return" style="width:520px;"/></a>
 
-Once the tax return is submitted, a GET request can be sent using the *Retrieve Obligations and Submissions* endpoint to check the obligations defined for this organisation.
+Before submitting a tax return, a GET request can be sent using the *Retrieve Obligations and Submissions* endpoint to check the obligations defined for the organisation.
 
 ```shell
 curl --request GET \

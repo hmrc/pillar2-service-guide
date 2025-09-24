@@ -10,9 +10,9 @@ Version 1.0 issued 30 January 2025
 
 ## Overview
 
-This service guide explains how you can integrate your software with the [Pillar 2 API](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0). Pillar 2 API documentation also includes an [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) and a [roadmap](https://developer.service.hmrc.gov.uk/roadmaps/pillar2-roadmap/).
+This service guide explains how you can integrate your software with the Pillar 2 API. Pillar 2 API documentation also includes an [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) and a [roadmap](https://developer.service.hmrc.gov.uk/roadmaps/pillar2-roadmap/).
 
-*Pillar 2* is the term given to the Global Anti-Base Erosion Rules (**GloBE**) published by the Organisation for Economic Cooperation and Development (**OECD**) in 2023. GloBE was designed to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate (**ETR**) of 15% in each jurisdiction where they are operating. To implement Pillar 2, the UK has introduced a Multinational Top-up Tax (**MTT**) and a Domestic Top-up Tax (**DTT**). 
+*Pillar 2* is the term given to the Global Anti-Base Erosion Rules (**GloBE**) published by the Organisation for Economic Cooperation and Development (**OECD**) in 2023. GloBE was designed to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate (**ETR**) of 15% in each jurisdiction where they are operating. To implement Pillar 2, the UK has introduced a Multinational Top-up Tax (**MTT**) and a Domestic Top-up Tax (**DTT**). For more detailed information on MTT and DTT, please consult the [HMRC summary page](https://www.gov.uk/government/collections/multinational-top-up-tax-and-domestic-top-up-tax). 
 
 The API provides MNEs (and their agents) with the capability to
 
