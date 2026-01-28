@@ -23,7 +23,7 @@ If the *Amend UK Tax Return* request is successful, it returns a response contai
 
 ## Testing
 
-Before using the sandbox, please read through the [API Testing Setup](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation. 
+Before using the sandbox, please read through the [API Testing Setup](set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation. 
 
 <a href="figures/amenduktr-test-sequence.svg" target="blank"><img src="figures/amenduktr-test-sequence.svg" alt="Sequence diagram showing REST calls for testing amend UK Tax Return" style="width:520px;" /></a>
 

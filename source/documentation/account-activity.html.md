@@ -15,7 +15,7 @@ The *Retrieve Account Activity* endpoint has an HTTP GET code. When a successful
 
 ## Testing
 
-Before using the sandbox, please read through the [API Testing Setup](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation.
+Before using the sandbox, please read through the [API Testing Setup](set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation.
 
 ### Retrieve account activity
 

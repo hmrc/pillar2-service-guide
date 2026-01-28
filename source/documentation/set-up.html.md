@@ -28,7 +28,7 @@ The test organisation facilitates the storage of submissions against a specific 
 
 The cURL examples shown here will create a UK only test organisation where *domesticOnly* is set to true for a specific accounting period.
 
-For the *Retrieve Account Activity* endpoint, there is a field named *accountActivityScenario* within the *testData* structure. This field must be populated with a chosen scenario from a set list. For more information on this, see the [*Retrieve Account Activity* API](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/account-activity.html).
+For the *Retrieve Account Activity* endpoint, there is a field named *accountActivityScenario* within the *testData* structure. This field must be populated with a chosen scenario from a set list. For more information on this, see the [*Retrieve Account Activity* API](account-activity.html).
 
 The *domesticOnly* flag is used to create an MNE or UK-only organisation. This will be important when testing the *Submit UK Tax Return* endpoint and the conditional flags which depend on this value.
 
