@@ -15,7 +15,7 @@ If the filing member (or agent) has submitted an ORN and is required to amend it
 
 ## Testing
 
-Before using the sandbox, please read through the [API Testing Setup](https://developer.service.hmrc.gov.uk/guides/pillar2-service-guide/documentation/set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation.
+Before using the sandbox, please read through the [API Testing Setup](set-up.html) page of the service guide and work through all the required steps for creating a test user and organisation.
 
 ### Amend overseas return notification
 
