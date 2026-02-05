@@ -16,7 +16,7 @@
 
 package test
 
-import scala.sys.process._
+import scala.sys.process.*
 
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
