@@ -1,6 +1,6 @@
 val appName = "pillar2-service-guide"
 
-scalaVersion := "2.13.16"
+scalaVersion := "3.3.5"
 
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
 ThisBuild / semanticdbEnabled := true
@@ -17,9 +17,6 @@ lazy val microservice = Project(appName, file("."))
   .settings(scalacOptions ++= Seq("-language:postfixOps"))
   .settings(
     scalacOptions ++= Seq(
-      "-Wconf:cat=unused&src=views/.*\\.scala:s",
-      "-Wconf:cat=unused&src=.*RoutesPrefix\\.scala:s",
-      "-Wconf:cat=unused&src=.*Routes\\.scala:s",
-      "-Wconf:cat=unused&src=.*ReverseRoutes\\.scala:s"
+      "-Wconf:cat=deprecation:w,cat=feature:w,src=target/.*:s,msg=Flag.*repeatedly:s"
     )
   )
