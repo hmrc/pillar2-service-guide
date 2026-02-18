@@ -37,14 +37,15 @@ When successful, the API will return a response containing account activity data
 
 ```json
 {
-  "processingDate": "2026-01-21T11:02:13.4607145112",
+  "processingDate": "2026-02-18T08:25:16.353240662Z",
   "transactionDetails": [
     {
-      "transactionType": "Debit",
-      "transactionDesc": "Pillar 2 UK Tax Return Pillar 2 DTT",
+      "transactionType": "DEBIT",
+      "transactionDesc": "UKTR - DTT",
       "startDate": "2026-01-01",
       "endDate": "2026-12-31",
-      "transactionDate": "2026-01-21",
+      "chargeRefNo": "X123456789012",
+      "transactionDate": "2026-02-18",
       "dueDate": "2027-06-30",
       "originalAmount": 10000,
       "outstandingAmount": 10000
