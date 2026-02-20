@@ -7,7 +7,7 @@ weight: 9
 
 ## Overview
 
-The *Retrieve Account Activity* endpoint retrieves financial transaction details from Pillar 2. Account activity includes charges, determinations, penalties, payments, and what payments have been allocated to charge. Also included are appeals, standovers, and accruing interest.
+The *Retrieve Account Activity* endpoint retrieves financial transaction details from Pillar 2. Account activity includes charges, determinations, penalties, payments, and what payments have been allocated to charge. Also included are appeals, standovers, and accruing interest. akbufsakufsa
 
 The *Retrieve Account Activity* endpoint has an HTTP GET code. When a successful call is made, the API will return information relating to account activity for a given group within a specified time period.
 
