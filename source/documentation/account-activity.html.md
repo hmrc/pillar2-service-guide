@@ -1,6 +1,6 @@
 ---
 title: Retrieve Account Activity | Pillar 2 Service Guide
-weight: 9
+weight: 10
 ---
 
 # Retrieve account activity
