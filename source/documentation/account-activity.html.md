@@ -37,7 +37,7 @@ When successful, the API will return a response containing account activity data
 
 ```json
 {
-  "processingDate": "2026-02-18T08:25:16.353240662Z",
+  "processingDate": "2026-02-18T13:59:10Z",
   "transactionDetails": [
     {
       "transactionType": "DEBIT",
