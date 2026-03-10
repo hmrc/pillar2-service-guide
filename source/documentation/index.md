@@ -12,9 +12,9 @@ Version 1.0 issued 30 January 2025
 
 This service guide explains how you can integrate your software with the Pillar 2 API. Pillar 2 API documentation also includes a [Pillar 2 API Guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) and a [Pillar 2 Roadmap](https://developer.service.hmrc.gov.uk/roadmaps/pillar2-roadmap/).
 
-*Pillar 2* is the term given to the Global Anti-Base Erosion Rules (**GloBE**) published by the Organisation for Economic Cooperation and Development (**OECD**) in 2023. GloBE was designed to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate (**ETR**) of 15% in each jurisdiction where they are operating. To implement Pillar 2, the UK has introduced a Multinational Top-up Tax (**MTT**) and a Domestic Top-up Tax (**DTT**). For more detailed information on MTT and DTT, please consult the [HMRC Pillar 2 Policy Guide](https://www.gov.uk/government/collections/multinational-top-up-tax-and-domestic-top-up-tax). 
+*Pillar 2* is the term given to the Global Anti-Base Erosion Rules (**GloBE**) published by the Organisation for Economic Cooperation and Development (**OECD**) in 2023. GloBE was designed to ensure Multinational Enterprises (**MNEs**) with a turnover of €750m or more are subject to a minimum Effective Tax Rate (**ETR**) of 15% in each jurisdiction where they are operating. To implement Pillar 2, the UK has introduced a Multinational Top-up Tax (**MTT**) and a Domestic Top-up Tax (**DTT**). For more detailed information on MTT and DTT, please consult the [HMRC Collection page](https://www.gov.uk/government/collections/multinational-top-up-tax-and-domestic-top-up-tax). 
 
-The API provides MNEs (and their agents) with the capability to
+The API provides MNEs (and their agents) with the capability to:
 
 - submit a UK Tax Return (**UKTR**)
 - amend a submitted UKTR
@@ -23,6 +23,7 @@ The API provides MNEs (and their agents) with the capability to
 - submit an Overseas Return Notification (**ORN**)
 - amend a submitted ORN
 - retrieve the details of a submitted ORN
+- retrieve account activity
 
 
 ## Getting started
@@ -49,10 +50,6 @@ A glossary of terms has been created to help you navigate the information in the
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>API</strong> - Application Programming Interface</td>
-<td>Software code that enables communication between different applications.</td>
-</tr>
 <tr>
 <td><strong>BTN</strong> - Below-Threshold Notification</td>
 <td>A notification sent to HMRC if group revenues fall below the level where Pillar 2 charges are applied. Sending a BTN removes the obligation to submit a UKTR for both current (and future) accounting periods.</td>
@@ -126,7 +123,9 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 ## Testing requirements
 
-You can test the Pillar 2 API in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation). You will need to register for an account before you start, and there are instructions for new starters in the [user guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub). The [API reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/pillar2-submission-api/1.0) contains specific information for testing the Pillar 2 API. 
+API testing is performed in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation) "sandbox" environment. Once you have [registered for an account](https://developer.service.hmrc.gov.uk/developer/registration), you can conduct your own testing. The Pillar 2 API belongs to the "Corporation Tax" catergory.
+
+Work through the instructuons on the [getting started](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub) page to create an applciation, then. locate and subscribe to the Pillar 2 API.
 
 
 ## Software requirements
@@ -148,15 +147,6 @@ and have access to all their records created and be able to export these records
 HMRC recognises customers or agents will use different pieces of software if an all-in-one product does not meet their requirements (for example, combining record keeping software with tax filing software). 
 
 
-### Bridging software
-
-“Bridging software” products are used by customers to digitally link record-keeping software with the software solution they use to submit Pillar 2 tax information. Bridging software ensures customers meet their obligations while using software products which meet the minimum functionality standards set out in “Compatible software” above.
-
-
 ## Support contacts 
 
-Pillar 2 will offer support for organisations in checking eligibility and registering for the service, prepay taxes and later on file returns and be tax compliant in the UK and globally.
-
-*API support* is available 07.00-19.00 Monday-Friday. If planned downtime for system maintenance is agreed an appropriate error message will be displayed.
-
-*Pillar 2 (Telephone) support* is available via contact centres 08.30-17.00 Monday-Friday. Calls are escalated to the Specialist Team. Specialist Team and CRM email support is available 8.30-17.00.
+If you have any technical questions regarding Pillar 2 Top-up taxes, you can email us at [pillar2mailbox@hmrc.gov.uk](mailto:pillar2mailbox@hmrc.gov.uk) or get in touch with the Software Development Support Team (SDST) at [sdsteam@hmrc.gov.uk](mailto:sdsteam@hmrc.gov.uk).
