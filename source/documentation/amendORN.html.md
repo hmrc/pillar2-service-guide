@@ -75,7 +75,7 @@ All fields in the request are mandatory.
 
 ```shell
 curl --request PUT \
-  --url https://test-api.service.hmrc.gov.uk/organisations/pillar-two/overseas-return-notification/amend \
+  --url https://test-api.service.hmrc.gov.uk/organisations/pillar-two/overseas-return-notification \
   --header 'authorization: YOUR_BEARER_TOKEN' \
   --header 'content-type: application/json' \
   --header 'x-pillar2-id: YOUR_PILLAR2_ID' \
