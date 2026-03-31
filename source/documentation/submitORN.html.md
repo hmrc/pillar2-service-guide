@@ -102,7 +102,7 @@ If a duplicate submission is received, a 422 client error response with code "04
   "errors": {
     "processingDate": "2025-03-17T09:26:17Z",
     "code": "044",
-    "message": "Tax obligation already fulfilled"
+    "message": "Tax obligation already fulfilled. A ORN for the specified period has already been submitted."
   }
 }
 ```
