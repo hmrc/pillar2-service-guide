@@ -125,7 +125,7 @@ Agents need to [register with HMRC](https://www.gov.uk/guidance/register-with-hm
 
 API testing is performed in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation) "sandbox" environment. Once you have [registered for an account](https://developer.service.hmrc.gov.uk/developer/registration), you can conduct your own testing. The Pillar 2 API belongs to the "Corporation Tax" catergory.
 
-Work through the instructuons on the [getting started](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub) page to create an applciation, then. locate and subscribe to the Pillar 2 API.
+Work through the instructions on the [getting started](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub) page to create an application, then locate and subscribe to the Pillar 2 API.
 
 
 ## Software requirements
