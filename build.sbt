@@ -4,7 +4,6 @@ scalaVersion := "3.3.5"
 
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
 ThisBuild / semanticdbEnabled := true
-ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
 
 lazy val microservice = Project(appName, file("."))
   .enablePlugins(PlayScala, SbtDistributablesPlugin)
@@ -20,3 +19,6 @@ lazy val microservice = Project(appName, file("."))
       "-Wconf:cat=deprecation:w,cat=feature:w,src=target/.*:s,msg=Flag.*repeatedly:s"
     )
   )
+
+addCommandAlias("prePrChecks", "; scalafmtCheckAll; scalafmtSbtCheck; scalafixAll --check")
+addCommandAlias("lint", "; scalafmtAll; scalafmtSbt; scalafixAll")
