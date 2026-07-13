@@ -1,7 +1,7 @@
 // Include only the bits of GOV.UK Frontend we need
-@import "govuk/settings/all";
-@import "govuk/tools/all";
-@import "govuk/helpers/all";
+@import "govuk/settings/index";
+@import "govuk/tools/index";
+@import "govuk/helpers/index";
 
 .give-feedback {
   padding: govuk-spacing(3);
