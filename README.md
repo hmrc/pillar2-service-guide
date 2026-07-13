@@ -88,9 +88,13 @@ This will update the `Gemfile.lock`
 In some cases, the [latest release](https://github.com/alphagov/tech-docs-gem/releases) of the gem might not be fetched.
 If this happens, edit the Gemfile to specify the latest version explicitly, for example
 ```
-gem 'govuk_tech_docs', '6.3.0'
+gem 'govuk_tech_docs', '5.14.0'
 ```
 and run the update command again. Once updated, remove the explicit version and run the update once more.
+
+**Warning**: the version of `govuk_tech_docs` has been pinned to `5.14.0`, the latest `5.x.x` version, because
+`./batech update` updates to version `6.x.x` which introduces breaking changes and is not compatible with the
+service-guide-skeleton.
 
 ### How do I change the Ruby version
 Edit `.ruby-version` with the required version of Ruby.
