@@ -1,6 +1,6 @@
 val appName = "pillar2-service-guide"
 
-scalaVersion := "3.3.5"
+scalaVersion := "3.3.6"
 
 ThisBuild / libraryDependencySchemes += "org.scala-lang.modules" %% "scala-xml" % VersionScheme.Always
 ThisBuild / semanticdbEnabled := true
