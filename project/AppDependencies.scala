@@ -1,5 +1,5 @@
-import play.sbt.PlayImport._
-import sbt._
+import play.sbt.PlayImport.*
+import sbt.*
 
 object AppDependencies {
   lazy val bootStrapPlayVersion = "10.6.0"
@@ -10,6 +10,6 @@ object AppDependencies {
   )
 
   lazy val test: Seq[ModuleID] = Seq(
-    "uk.gov.hmrc" %% "bootstrap-test-play-30"     % bootStrapPlayVersion
+    "uk.gov.hmrc" %% "bootstrap-test-play-30" % bootStrapPlayVersion
   ).map(_ % Test)
 }
