@@ -9,6 +9,8 @@ gem 'wdm', '~> 0.1.1', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Include the tech docs gem
-gem 'govuk_tech_docs'
+# Pinning to a 5.x.x version. Version 6.x.x introduces breaking changes that service-guide-skeleton is not compatible with.
+# Source: https://github.com/alphagov/govuk-frontend/discussions/6353
+gem 'govuk_tech_docs', '~> 5.1.0'
 
 gem 'thin', '~> 1.8.2'

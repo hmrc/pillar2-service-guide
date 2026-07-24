@@ -16,7 +16,10 @@ lazy val microservice = Project(appName, file("."))
   .settings(scalacOptions ++= Seq("-language:postfixOps"))
   .settings(
     scalacOptions ++= Seq(
-      "-Wconf:cat=deprecation:w,cat=feature:w,src=target/.*:s,msg=Flag.*repeatedly:s"
+      "-Wconf:cat=unused&src=views/.*\\.scala:s",
+      "-Wconf:cat=unused&src=.*RoutesPrefix\\.scala:s",
+      "-Wconf:cat=unused&src=.*Routes\\.scala:s",
+      "-Wconf:cat=unused&src=.*ReverseRoutes\\.scala:s"
     )
   )
 

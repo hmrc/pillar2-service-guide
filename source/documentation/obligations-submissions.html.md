@@ -23,7 +23,7 @@ Before using the sandbox, please read through the [API Testing Setup](set-up.htm
 
 The diagram below shows a *Retrieve Obligations and Submissions* request and response. 
 
-<a href="figures/obligations-submissions-test-sequence.svg" target="blank"><img src="figures/obligations-submissions-test-sequence.svg" alt="Sequence diagram showing REST calls for returning obligations and submisssions" style="width:520px;" /></a>
+<a href="figures/obligations-submissions-test-sequence.svg" target="blank"><img src="figures/obligations-submissions-test-sequence.svg" alt="Sequence diagram showing REST calls for returning obligations and submissions" style="width:520px;" /></a>
 
 A *Retrieve Obligations and Submissions* GET request returns information on the *submissionType*, *submissionDate*, and the status of the obligation ("Open" or "Fulfilled"). The accounting period is defined by the *startDate* and *endDate* parameters. Each obligation is returned as an *obligationType* with each *submissionType* held as a nested value. 
 
